@@ -75,7 +75,7 @@ const Search = ({ searchbar,fetchData,setFilter,filter }) => {
                         </div>
 
                         <div className="w-1/2 flex gap-3">
-                            <input className='peer' type="radio" name="interest" value={'Female'} id="" /> <label className='peer-checked:text-[#F13353]'> Female </label>
+                            <input className='peer' type="radio" name="interest" value={'Female'} id="" /> <label className='peer-checked:text-[#F13353]' defaultChecked> Female </label>
                         </div>
 
                         <div className="w-1/2 flex gap-3">

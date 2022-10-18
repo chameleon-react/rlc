@@ -9,7 +9,7 @@ function TermsAndConditions() {
                 <NavBar />
             
       <div className=" px-5 my-20 md:m-20 ">
-        <h1 className='text-3xl font-bold lg:text-4xl'>Terms and Conditions</h1>
+        <h1 className='text-3xl font-bold lg:text-4xl text-center'>Terms and Conditions</h1>
         <h2 className='text-2xl font-semibold mt-5'>Disclaimer</h2>
         <div className="text-xl font-light space-y-5 mt-5">
           <p>Red Light Club only allows adult individuals to propose their time and companionship to other adult individuals.</p>
