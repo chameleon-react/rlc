@@ -1,0 +1,7 @@
+node_modules
+/backend/image/*
+yarn.lock
+yarn.lock
+README.md
+build
+/backend/gallery/*

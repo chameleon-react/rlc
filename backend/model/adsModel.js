@@ -1,0 +1,114 @@
+const { DataTypes } = require("sequelize");
+const db = require('../database')
+
+const adsModel = db.define("ads",{
+    username:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    adsTitle:{ 
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    region:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    location:{
+        type:DataTypes.STRING
+    },
+    phoneNo:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    email:{
+        type:DataTypes.STRING,
+        allowNull:false,
+        validate:{
+            isEmail:true
+        }
+    },
+    introduction:{ 
+        type:DataTypes.STRING(3000),
+        allowNull:false
+    },
+    description:{
+        type:DataTypes.STRING(6000),
+        allowNull:false
+    },
+
+    nationality:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    language:{
+        type:DataTypes.ARRAY(DataTypes.STRING)
+    },
+
+    appearance:{
+        type:DataTypes.JSON,
+        allowNull:false,
+    },
+    socialMedia:{
+        type:DataTypes.JSON,
+        allowNull:false,
+    },
+    currencyType:{
+        type:DataTypes.JSON
+    },
+    charge:{
+        type:DataTypes.JSON
+    },
+    service:{
+        type:DataTypes.JSON
+    },
+    profilePhoto:{
+        type:DataTypes.STRING
+    },
+    gallery:{
+        type:DataTypes.ARRAY(DataTypes.STRING)
+    },
+    view:{
+        type:DataTypes.INTEGER,
+        defaultValue:0
+    },
+    visibility:{
+        type:DataTypes.BOOLEAN,
+        defaultValue:true
+    },
+    verifyRequest:{
+        type:DataTypes.BOOLEAN,
+        defaultValue:false
+    },
+    verificationPhoto:{
+        type:DataTypes.STRING,
+    },
+    verified:{
+        type:DataTypes.BOOLEAN,
+        defaultValue:false
+    },
+    membershipType:{
+        type:DataTypes.STRING,
+        defaultValue:'none'
+    },
+    serviceCharge:{
+        type:DataTypes.JSON,
+        defaultValue:{}
+    },
+    analytics:{
+        type:DataTypes.JSON,
+        defaultValue:{}
+    },
+    review:{
+        type:DataTypes.ARRAY(DataTypes.JSON),
+        defaultValue:[]
+    },
+    qna:{
+        type:DataTypes.ARRAY(DataTypes.JSON),
+        defaultValue:[]
+    }
+})
+
+console.log('Ads Table is Ok')
+
+module.exports = adsModel
