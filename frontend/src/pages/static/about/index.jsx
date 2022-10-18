@@ -1,12 +1,10 @@
 import React from 'react'
 import NavBar from '../../common/NavBar'
 import Footer from '../../common/Footer'
-import SignUpBanner from './components/SignUpBanner'
 
 function About() {
     return (
         <div className='text-white'>
-            <SignUpBanner />
             <div className=' w-full bg-cover bg-center' style={{ backgroundImage: "url('/image/home/banner2.webp')" }}>
                 <NavBar />
             
