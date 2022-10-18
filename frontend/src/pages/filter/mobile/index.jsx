@@ -38,7 +38,19 @@ console.log(filter)
             <div className="w-[90%] mx-auto h-[100px] rounded-t-[5px] bg-white"></div>
             <Footer setSearchbar={setSearchbar} searchbar={searchbar} />
             <Search searchbar={searchbar} fetchData={fetchData} setFilter={setFilter} filter={filter}/>
-            <div className="relative z-40">
+            <Card data={data} />
+        </div>
+    )
+}
+
+export default FilterMobile
+
+
+
+
+const Card = ({data})=>{
+    return(
+        <div className="relative z-40">
                 <div className="Platium flex justify-center flex-wrap gap-3 mt-3">
                     {
                         data.map((e, index) => e?.membershipType == 'Platinum' && <Platinum key={index} profilePhoto={e.profilePhoto} id={e.id} age={e.appearance?.age} adsTitle={e.adsTitle} region={e.region} />)
@@ -61,11 +73,8 @@ console.log(filter)
                     }
                 </div>
             </div>
-        </div>
     )
 }
-
-export default FilterMobile
 
 
 

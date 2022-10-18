@@ -13,7 +13,7 @@ const Screen1 = () => {
                 <Globe />
                 <img src="/image/home/lady.png" className="hidden lg:block absolute -left-[100px] bottom-0 z-40  h-[600px]" alt="" />
                 <img src="/image/home/wave.svg" className='w-full absolute bottom-0 z-40' alt="" />
-                <div className='absolute bottom-0  w-full z-50 flex justify-center text-white font-medium text-lg'>See the latest listing in your region</div>
+                <div className='absolute bottom-0  w-full z-50 hidden md:flex justify-center text-white font-medium text-lg '>See the latest listing in your region</div>
             </div>
         </>
     )
@@ -27,12 +27,13 @@ const Globe = () => {
     return (
         <div className="w-full h-[90%]  relative group">
             <div className='absolute  w-full z-50 flex justify-center text-white font-medium text-lg'>Select Your Region</div>
+
             <img src="/image/home/ellipse1.png" className='hidden lg:block w-[61px] h-[61px] absolute top-[74px] right-[131px]' alt="" />
             <img src="/image/home/ellipse2.png" className='hidden lg:block w-[147px] h-[147px] absolute inset-y-0 my-auto -right-[70px]' alt="" />
             <img src="/image/home/ellipse3.png" className='hidden lg:block w-[529px] h-[529px] absolute -bottom-[250px] -right-[250px] z-50 opacity-80' alt="" />
-            <img src="/image/home/outer.png" className='outer absolute inset-0 m-auto  z-20' alt="" />
+            <img src="/image/home/outer.png" className='outer hidden md:block absolute inset-0 m-auto  z-20' alt="" />
             <img src="/image/home/inner.png" className='inner absolute inset-0 m-auto  z-30' alt="" />
-            <img src="/image/home/globe.png" className='globe  absolute inset-0 m-auto z-40' alt="" />
+            <img src="/image/home/globe.png" className='globe absolute inset-0 m-auto z-40' alt="" /> 
             <Flag />
         </div>
 

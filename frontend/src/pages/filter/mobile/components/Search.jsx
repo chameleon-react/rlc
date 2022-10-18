@@ -9,10 +9,21 @@ const Search = ({ searchbar,fetchData,setFilter,filter }) => {
     const [eye, setEye] = useState('Brown')
     const dispatch = useDispatch()
     const [price, setPrice] = useState([3900,5500])
+    const priceChanger = (event, newValue, activeThumb)=>{
+        if (!Array.isArray(newValue)) {
+            return;
+          }
+      
+          if (activeThumb === 0) {
+            setPrice([Math.min(newValue[0], price[1] - 1000), price[1]]);
+          } else {
+            setPrice([price[0], Math.max(newValue[1], price[0] + 1000)]);
+          }
+    }
     return (
         searchbar && <div className={`${searchbar && 'backdrop-blur-md'} h-screen fixed bottom-0 w-full duration-200 delay-75 z-[45]`}>
 
-            <div className={`${searchbar ? 'h-[700px] border bg-white' : 'h-0 border-0'}  fixed duration-500 bottom-0 w-full rounded-t-[30px] z-[45]  overflow-hidden  p-[30px] blur-none`}>
+            <div className={`${searchbar ? 'border bg-white' : 'h-0 border-0'}  fixed duration-500 bottom-0 w-full rounded-t-[30px] z-[45]  overflow-hidden  pb-[80px] p-[30px] blur-none`}>
                 <div className="w-full flex justify-between">
                     <span>Price Range</span>
                     <select name="" id="" className='outline-none bg-transparent'>
@@ -26,8 +37,9 @@ const Search = ({ searchbar,fetchData,setFilter,filter }) => {
                         max={10000}
                         step={500}
                         value={price}
-                        onChange={e=>{setPrice(e.target.value)}}
+                        onChange={priceChanger}
                         valueLabelDisplay={'on'}
+                        disableSwap
                     />
                 </div>
                 <div className="w-full flex justify-between ">
@@ -75,15 +87,18 @@ const Search = ({ searchbar,fetchData,setFilter,filter }) => {
                         </div>
 
                         <div className="w-1/2 flex gap-3">
-                            <input className='peer' type="radio" name="interest" value={'Female'} id="" /> <label className='peer-checked:text-[#F13353]' defaultChecked> Female </label>
+                            <input className='peer' type="radio" name="interest" value={'Female'} id="" checked/> 
+                            <label className='peer-checked:text-[#F13353]' > Female </label>
                         </div>
 
                         <div className="w-1/2 flex gap-3">
-                            <input className='peer' type="radio" name="interest" value={'Couple'} id="" /> <label className='peer-checked:text-[#F13353]'> Couple </label>
+                            <input className='peer' type="radio" name="interest" value={'Couple'} id="" /> 
+                            <label className='peer-checked:text-[#F13353]'> Couple </label>
                         </div>
 
                         <div className="w-1/2 flex gap-3">
-                            <input className='peer' type="radio" name="interest" value={'Group'} id="" /> <label className='peer-checked:text-[#F13353]'> Group </label>
+                            <input className='peer' type="radio" name="interest" value={'Group'} id="" /> 
+                            <label className='peer-checked:text-[#F13353]'> Group </label>
                         </div>
 
                     </div>
