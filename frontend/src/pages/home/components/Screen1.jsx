@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import NavBar from "../../common/NavBar"
 
 const Screen1 = () => {
@@ -5,9 +6,9 @@ const Screen1 = () => {
         <>
             <div className="w-full h-[40px] bg-white flex justify-center items-center gap-[60px] relative">
                 <span>Want to get listed in our site?</span>
-                <span className='text-[#DC2626]'> Sign Up Now</span>
+                <Link to={'/auth'} className='text-[#DC2626] cursor-pointer' > Sign Up Now</Link>
             </div>
-            <div className="h-[calc(100vh-40px)] w-full bg-[#010315] relative">
+            <div className="h-[calc(100vh-40px)] w-full bg-[#010315] relative overflow-hidden">
                 <NavBar />
                 <Globe />
                 <img src="/image/home/lady.png" className="hidden lg:block absolute -left-[100px] bottom-0 z-40  h-[600px]" alt="" />
@@ -42,36 +43,50 @@ const Globe = () => {
 
 
 const Flag = () => {
-
+    
     return (
         <div className="w-[590px] h-[590px] absolute inset-0 m-auto rounded-full  z-50">
+            <Link to={'/filter'}>
             <div className="border border-[#FB0202] flag    rounded-full absolute bottom-12 left-24 flex justify-center items-center overflow-hidden" style={{ animationDuration: '1s' }}>
                 <img src="/image/home/flag/Japan.png" className="w-[53px] h-[53px]" alt="" />
             </div>
+            </Link>
 
+            <Link to={'/filter'}>
             <div className="border border-[#FB0202] flag  rounded-full absolute bottom-32 left-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '2s' }}>
                 <img src="/image/home/flag/spain.png" className="w-[53px] h-[53px]" alt="" />
             </div>
+            </Link>
 
+            <Link to={'/filter'}>
             <div className="border border-[#FB0202] flag  rounded-full absolute top-32 left-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '3s' }}>
                 <img src="/image/home/flag/srilanka.png" className="w-[53px] h-[53px]" alt="" />
             </div>
+            </Link>
 
+            <Link to={'/filter'}>
             <div className="border border-[#FB0202] flag rounded-full absolute top-12 left-24 flex justify-center items-center overflow-hidden" style={{ animationDuration: '4s' }}>
                 <img src="/image/home/flag/UAE.png" className="w-[53px] h-[53px]" alt="" />
             </div>
-
+            </Link>
+            
+            <Link to={'/filter'}>    
             <div className="border border-[#FB0202] flag rounded-full absolute bottom-32 right-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '7s' }}>
                 <img src="/image/home/flag/malaysia.png" className="w-[53px] h-[53px]" alt="" />
             </div>
-
+            </Link>
+            
+            <Link to={'/filter'}>
             <div className="border border-[#FB0202] flag  rounded-full absolute top-32 right-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '6s' }}>
                 <img src="/image/home/flag/UK.png" className="w-[53px] h-[53px]" alt="" />
             </div>
-
+            </Link>
+            
+            <Link to={'/filter'}>
             <div className="border border-[#FB0202] flag rounded-full absolute top-12 right-24 flex justify-center items-center overflow-hidden" style={{ animationDuration: '5s' }}>
                 <img src="/image/home/flag/bahrain.png" className="w-[53px] h-[53px]" alt="" />
             </div>
+            </Link>
 
         </div>
     )

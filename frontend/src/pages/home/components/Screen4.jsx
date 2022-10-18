@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Screen4 = () => {
     return (
         <div className="screen4 min-h-screen bg-[#D3135A] w-full flex flex-col items-center pt-[45px] text-white gap-5 pb-5 ">
@@ -47,7 +49,9 @@ const Free = () => {
             <div className="w-full h-[7.14%] flex justify-center items-center text-xl">Unlimited</div>
             <div className="w-full h-[7.14%] flex justify-center items-center text-xl">Free Ads Section</div>
             <div className="w-full h-[7.14%] flex justify-center items-center">
-                <button className="text-[#D41210] border border-[#D41210]  w-[119px] h-[28px] rounded-2xl">Sign Up</button>
+                <Link to={'/auth'}>
+                    <button className="text-[#D41210] border border-[#D41210]  w-[119px] h-[28px] rounded-2xl">Sign Up</button>
+                </Link>
             </div>
         </div>
     )
@@ -69,7 +73,9 @@ const Silver = () => {
             <div className="w-full h-[7.14%] flex justify-center items-center text-xl">16</div>
             <div className="w-full h-[7.14%] flex justify-center items-center text-xl">Lower</div>
             <div className="w-full h-[7.14%] flex justify-center items-center">
-                <button className="text-[#D41210] border border-[#D41210]  w-[119px] h-[28px] rounded-2xl">Sign Up</button>
+                <Link to={'/auth'}>
+                    <button className="text-[#D41210] border border-[#D41210]  w-[119px] h-[28px] rounded-2xl">Sign Up</button>
+                </Link>
             </div>
         </div>
     )
@@ -91,7 +97,9 @@ const Gold = () => {
             <div className="w-full h-[7.14%] flex justify-center items-center text-xl">8</div>
             <div className="w-full h-[7.14%] flex justify-center items-center text-xl">Middle</div>
             <div className="w-full h-[7.14%] flex justify-center items-center">
-                <button className="text-[#D41210] border border-[#D41210]  w-[119px] h-[28px] rounded-2xl bg-white">Sign Up</button>
+                <Link to={'/auth'}>
+                    <button className="text-[#D41210] border border-[#D41210]  w-[119px] h-[28px] rounded-2xl bg-white">Sign Up</button>
+                </Link>
             </div>
         </div>
     )
@@ -114,7 +122,9 @@ const Platinum = () => {
             <div className="w-full h-[7.14%] flex justify-center items-center text-xl">3</div>
             <div className="w-full h-[7.14%] flex justify-center items-center text-xl">Top</div>
             <div className="w-full h-[7.14%] flex justify-center items-center">
-                <button className="text-[#D41210] border border-[#D41210]  w-[119px] h-[28px] rounded-2xl">Sign Up</button>
+                <Link to={'/auth'}>
+                    <button className="text-[#D41210] border border-[#D41210]  w-[119px] h-[28px] rounded-2xl">Sign Up</button>
+                </Link>
             </div>
         </div>
     )
