@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom"
+
 const  Footer = ({ setSearchbar, searchbar }) => {
+    const navigate = useNavigate()
     return (
         <div className="fixed bottom-0  w-full   flex items-end z-50" >
             <div className="h-[60px] w-2/5 bg-[#F13353] flex justify-center items-center rounded-tl-2xl rounded-tr-[45px]">
-                <img src="/mobile/filter/home.png" className='cursor-pointer' alt="" />
+                <img src="/mobile/filter/home.png" className='cursor-pointer' alt="" onClick={()=>navigate('/')} />
             </div>
 
             <div className="h-[83px] w-1/5 flex flex-col items-center justify-end ">
@@ -16,7 +19,7 @@ const  Footer = ({ setSearchbar, searchbar }) => {
             </div>
 
             <div className="h-[60px] w-2/5 bg-[#F13353] flex justify-center items-center rounded-tr-2xl rounded-tl-[45px]">
-                <img src="/mobile/filter/profile.png" className='cursor-pointer' alt="" />
+                <img src="/mobile/filter/profile.png" className='cursor-pointer' onClick={()=>navigate('/auth')} alt="" />
             </div>
         </div>
     )
