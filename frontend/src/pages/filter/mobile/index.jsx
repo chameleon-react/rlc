@@ -30,6 +30,7 @@ function FilterMobile() {
     }
     useEffect(() => {
         fetchData()
+        // eslint-disable-next-line
     }, [])
 console.log(filter)
     return (
@@ -39,6 +40,7 @@ console.log(filter)
             <Footer setSearchbar={setSearchbar} searchbar={searchbar} />
             <Search searchbar={searchbar} fetchData={fetchData} setFilter={setFilter} filter={filter}/>
             <Card data={data} />
+            
         </div>
     )
 }
@@ -53,23 +55,23 @@ const Card = ({data})=>{
         <div className="relative z-40">
                 <div className="Platium flex justify-center flex-wrap gap-3 mt-3">
                     {
-                        data.map((e, index) => e?.membershipType == 'Platinum' && <Platinum key={index} profilePhoto={e.profilePhoto} id={e.id} age={e.appearance?.age} adsTitle={e.adsTitle} region={e.region} />)
+                        data.map((e, index) => e?.membershipType === 'Platinum' && <Platinum key={index} profilePhoto={e.profilePhoto} id={e.id} age={e.appearance?.age} adsTitle={e.adsTitle} region={e.region} />)
                     }
                 </div>
                 <div className="gold flex justify-center flex-wrap gap-3 mt-10">
                     {
-                        data.map((e, index) => e?.membershipType == 'Gold' && <Gold key={index} profilePhoto={e.profilePhoto} id={e.id} age={e.appearance?.age} adsTitle={e.adsTitle} region={e.region} />)
+                        data.map((e, index) => e?.membershipType === 'Gold' && <Gold key={index} profilePhoto={e.profilePhoto} id={e.id} age={e.appearance?.age} adsTitle={e.adsTitle} region={e.region} />)
                     }
 
                 </div>
                 <div className="silver flex justify-center flex-wrap gap-3 mt-10">
                     {
-                        data.map((e, index) => e?.membershipType == 'Silver' && <Silver key={index} profilePhoto={e.profilePhoto} id={e.id} age={e.appearance?.age} adsTitle={e.adsTitle} region={e.region} />)
+                        data.map((e, index) => e?.membershipType === 'Silver' && <Silver key={index} profilePhoto={e.profilePhoto} id={e.id} age={e.appearance?.age} adsTitle={e.adsTitle} region={e.region} />)
                     }
                 </div>
                 <div className="none flex justify-center flex-wrap gap-3 mt-10">
                     {
-                        data.map((e, index) => e?.membershipType == 'none' && <None key={index} profilePhoto={e.profilePhoto} id={e.id} age={e.appearance?.age} adsTitle={e.adsTitle} region={e.region} />)
+                        data.map((e, index) => e?.membershipType === 'none' && <None key={index} profilePhoto={e.profilePhoto} id={e.id} age={e.appearance?.age} adsTitle={e.adsTitle} region={e.region} />)
                     }
                 </div>
             </div>

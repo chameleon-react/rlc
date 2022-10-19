@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setEye, setHair, setMeasurement } from '../../../../redux/slice/adsSlice'
+import { setEye, setHair } from '../../../../redux/slice/adsSlice'
 import { setAllow, setDisable, setError } from '../../../../redux/slice/utilSlice'
 function Q5() {
     const dispatch = useDispatch()

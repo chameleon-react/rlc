@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectAllService, selectService } from '../../../../redux/slice/adsSlice'
-import { setAllow, setError } from '../../../../redux/slice/utilSlice'
+import { setAllow } from '../../../../redux/slice/utilSlice'
 
 function Q9() {
     const [showModal, setShowModal] = useState(false)
@@ -12,6 +12,7 @@ function Q9() {
     const [clicked, setClicked] = useState(false)
     useEffect(() => {
         dispatch(setAllow())
+        // eslint-disable-next-line
     }, [clicked])
     
     return (

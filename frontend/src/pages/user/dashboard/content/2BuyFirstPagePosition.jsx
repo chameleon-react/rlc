@@ -1,7 +1,7 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import backendIP from '../../../../backendIP'
+// import axios from 'axios'
+import React from 'react'
+// import { useSelector } from 'react-redux'
+// import backendIP from '../../../../backendIP'
 import Title from '../components/Title'
 
 import GoldCard from './components/BuyFirstPage/Gold'

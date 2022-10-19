@@ -9,7 +9,7 @@ function QNA({question,answer,profilePhoto,username}) {
                 <span className='absolute top-[114px] left-[131px] text-sm font-medium'>Username</span>
                 <p className='absolute top-[135px] left-[131px] text-xs '>{answer}</p>
                 <div className="profile photo absolute h-12 w-12 rounded-full  -right-5 top-[80px] overflow-hidden">
-                    <img src={profilePhoto} alt="profile photo" className='h-12 w-12'/>
+                    <img src={profilePhoto} alt="profile" className='h-12 w-12'/>
                 </div>
         </div>
     )

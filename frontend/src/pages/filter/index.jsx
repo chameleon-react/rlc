@@ -32,6 +32,7 @@ function Filter() {
   }
   useEffect(() => {
     fetchData()
+    // eslint-disable-next-line
   }, [])
   const [page, setPage] = useState(1)
   const [showSearch, setShowSearch] = useState(false)
@@ -51,28 +52,28 @@ function Filter() {
           <div className="max-w-[1440px] mx-auto">
             <div className={`platinum ${page === 1 ? 'flex' : 'hidden'} justify-center flex-wrap gap-2 mt-6`}>
               {
-                data.map((e, index) => e?.membershipType == 'Platinum' && <Platinum setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
+                data.map((e, index) => e?.membershipType === 'Platinum' && <Platinum setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
               }
             </div>
             <div className={`gold ${page === 1 ? 'flex' : 'hidden'} flex justify-center flex-wrap gap-2 mt-6`}>
               {
-                data.map((e, index) => e?.membershipType == 'Gold' && <Gold setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
+                data.map((e, index) => e?.membershipType === 'Gold' && <Gold setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
               }
             </div>
             <div className={`silver ${page === 1 ? 'flex' : 'hidden'} flex justify-center flex-wrap gap-2 mt-6`}>
               {
-                data.map((e, index) => e?.membershipType == 'Silver' && <Silver setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
+                data.map((e, index) => e?.membershipType === 'Silver' && <Silver setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
               }
 
             </div>
             <div className="none flex justify-center max-w-[1440px] mx-auto  flex-wrap gap-2 mt-6">
 
               {
-                page === 1 && data.slice(0, 17).map((e, index) => e?.membershipType == 'none' && <None setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
+                page === 1 && data.slice(0, 17).map((e, index) => e?.membershipType === 'none' && <None setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
               }
 
               {
-                page !== 1 && data.slice((page - 1) * 33, page * 33).map((e, index) => e?.membershipType == 'none' && <None setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
+                page !== 1 && data.slice((page - 1) * 33, page * 33).map((e, index) => e?.membershipType === 'none' && <None setIsLogin={setIsLogin} key={index} id={e.id} adsTitle={e.adsTitle} profilePhoto={e.profilePhoto} introduction={e.introduction} age={e.appearance.age} />)
               }
             </div>
           </div>

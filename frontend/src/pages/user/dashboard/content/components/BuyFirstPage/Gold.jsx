@@ -36,6 +36,7 @@ const GoldModal = ({setShowModal,index}) => {
         }).then(res => {
             setAds(res.data)
         })
+        // eslint-disable-next-line
     }, [])
     return (
         <div className="border border-black bg-[#333333] h-[40rem] w-[56rem] fixed inset-0 m-auto">

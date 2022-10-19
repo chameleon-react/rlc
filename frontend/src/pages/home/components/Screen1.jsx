@@ -54,37 +54,37 @@ const Flag = () => {
             </Link>
 
             <Link to={'/filter'}>
-            <div className="border border-[#FB0202] flag  rounded-full absolute bottom-32 left-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '2s' }}>
+            <div className="border border-[#FB0202] flag  rounded-full absolute bottom-32 left-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '1.5s' }}>
                 <img src="/image/home/flag/spain.png" className="w-[53px] h-[53px]" alt="" />
             </div>
             </Link>
 
             <Link to={'/filter'}>
-            <div className="border border-[#FB0202] flag  rounded-full absolute top-32 left-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '3s' }}>
+            <div className="border border-[#FB0202] flag  rounded-full absolute top-32 left-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '2s' }}>
                 <img src="/image/home/flag/srilanka.png" className="w-[53px] h-[53px]" alt="" />
             </div>
             </Link>
 
             <Link to={'/filter'}>
-            <div className="border border-[#FB0202] flag rounded-full absolute top-12 left-24 flex justify-center items-center overflow-hidden" style={{ animationDuration: '4s' }}>
+            <div className="border border-[#FB0202] flag rounded-full absolute top-12 left-24 flex justify-center items-center overflow-hidden" style={{ animationDuration: '2.5s' }}>
                 <img src="/image/home/flag/UAE.png" className="w-[53px] h-[53px]" alt="" />
             </div>
             </Link>
             
             <Link to={'/filter'}>    
-            <div className="border border-[#FB0202] flag rounded-full absolute bottom-32 right-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '7s' }}>
+            <div className="border border-[#FB0202] flag rounded-full absolute bottom-32 right-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '4s' }}>
                 <img src="/image/home/flag/malaysia.png" className="w-[53px] h-[53px]" alt="" />
             </div>
             </Link>
             
             <Link to={'/filter'}>
-            <div className="border border-[#FB0202] flag  rounded-full absolute top-32 right-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '6s' }}>
+            <div className="border border-[#FB0202] flag  rounded-full absolute top-32 right-7 flex justify-center items-center overflow-hidden" style={{ animationDuration: '3.5s' }}>
                 <img src="/image/home/flag/UK.png" className="w-[53px] h-[53px]" alt="" />
             </div>
             </Link>
             
             <Link to={'/filter'}>
-            <div className="border border-[#FB0202] flag rounded-full absolute top-12 right-24 flex justify-center items-center overflow-hidden" style={{ animationDuration: '5s' }}>
+            <div className="border border-[#FB0202] flag rounded-full absolute top-12 right-24 flex justify-center items-center overflow-hidden" style={{ animationDuration: '3s' }}>
                 <img src="/image/home/flag/bahrain.png" className="w-[53px] h-[53px]" alt="" />
             </div>
             </Link>

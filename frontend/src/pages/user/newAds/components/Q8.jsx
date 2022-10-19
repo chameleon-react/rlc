@@ -99,8 +99,7 @@ const Gallery = () => {
     });
 
     useEffect(() => {
-        // eslint-disable-next-line
-        
+        // eslint-disable-next-line 
         acceptedFiles.map(file => {
             setPreview(prev => [...prev, URL.createObjectURL(file)])
         })

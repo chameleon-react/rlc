@@ -198,7 +198,7 @@ html {
 }
 
 
-input[type='radio']:after {
+/* input[type='radio']:after {
     width: 16px;
     height: 16px;
     border-radius: 16px;
@@ -218,4 +218,4 @@ input[type='radio']:checked:after {
     display: inline-block;
     visibility: visible;
     border: 2px solid transparent;
-}
+} */

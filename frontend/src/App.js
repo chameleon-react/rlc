@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import Home from "./pages/home";
 import { useSelector } from 'react-redux'
 import About from "./pages/static/about";

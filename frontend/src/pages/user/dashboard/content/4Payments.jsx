@@ -13,6 +13,7 @@ const {username} = useSelector(state=>state.user)
 
     useEffect(() => {
         axios.post(`${backendIP}tier/${tier}`, {...tierDetails,username}).then(res => window.alert(res.data))
+        // eslint-disable-next-line
     }, [])
     
     return (

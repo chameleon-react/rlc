@@ -2,12 +2,10 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import backendIP from '../../../backendIP'
 import LoginModal from './LoginModal'
 function ReviewBox({setReviewModal,value,id}) {
     const [islogin, setIsLogin] = useState(true)
-    const navigate = useNavigate()
     const {username,isLogin} = useSelector(state=>state.user)
     const [review, setReview] = useState({
         title:'',

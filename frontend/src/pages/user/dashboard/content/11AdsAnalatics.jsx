@@ -17,6 +17,7 @@ function AdsAnalatics() {
       }}).then(res=>{
         setData(res.data)
       })
+      // eslint-disable-next-line
     }, [])
     const [id, setId] = useState('')
     const [date, setDate] = useState([])

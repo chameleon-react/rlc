@@ -4,7 +4,7 @@ export const Platinum = ({ profilePhoto, id, age, adsTitle, region }) => {
     const navigate = useNavigate()
     return (
         <div className="w-[110px] h-[200px] rounded-md border overflow-hidden">
-            <div className="w-full h-[175px]" onClick={() => { navigate(`/profile/${id}`);alert('Hello') }}>
+            <div className="w-full h-[175px]" onClick={() => { navigate(`/profile/${id}`)}}>
                 <img src={profilePhoto} className='h-full w-full object-cover' alt="" />
             </div>
             <div className="w-full h-[25px] bg-[#06175D] flex px-[10px] pt-[4px] justify-between text-white">

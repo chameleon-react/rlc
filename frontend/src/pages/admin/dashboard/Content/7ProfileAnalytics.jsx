@@ -1,13 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2'
-import { useSelector } from 'react-redux'
 import backendIP from '../../../../backendIP'
 import Title from '../components/Title'
 import GroupButton from './components/GroupButton'
 
 function ProfileAnalytics() {
-    const { username } = useSelector(state => state.user)
     const [data, setData] = useState([])
     useEffect(() => {
         axios.get(`${backendIP}ads/viewall`).then(res => {

@@ -19,6 +19,7 @@ import Meetwith from './components/Meetwith'
 import About from './components/About'
 import Name from './components/Name'
 import Contact from './components/Contact'
+import ProfileMobile from './mobile'
 
 function Profile() {
     const [isLogin, setIsLogin] = useState(true)
@@ -37,10 +38,13 @@ function Profile() {
             window.alert('Id is no valid')
             navigate('/')
         }
+        // eslint-disable-next-line
     }, [id])
     const [scroll, setScroll] = useState(false)
     return (
-        <div className={data.adsTitle}>
+        
+        <>
+        <div className={`hidden lg:block`}>
             {reviewModal && <ReviewBox setReviewModal={setReviewModal} value={value} />}
 
             <NavBar />
@@ -100,9 +104,7 @@ function Profile() {
                             <div className={`${scroll ? 'mt-0' : 'mt-[30px]'} duration-1000 flex flex-wrap gap-[35px] h-[500px] w-full overflow-y-scroll sb`} onScroll={() => { setScroll(true) }}>
                                 {
                                     data.qna?.map(e=>  <QNA profilePhoto={data.profilePhoto} question={e.question} answer={e.answer} username={e.username} />)
-                                }
-                                
-                                
+                                }   
                             </div>
                         </div>
                     </div>
@@ -114,6 +116,8 @@ function Profile() {
             }
             <Footer />
         </div>
+        <ProfileMobile data={data} id={id} setIsLogin={setIsLogin}/>
+        </>
     )
 }
 

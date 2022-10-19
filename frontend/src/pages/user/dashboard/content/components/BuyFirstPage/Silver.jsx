@@ -36,7 +36,7 @@ const SilverModal = ({setShowModal,index}) => {
         }).then(res => {
             setAds(res.data)
         })
-    }, [])
+    }, [username])
     return (
         <div className="border border-black bg-[#333333] h-[40rem] w-[56rem] fixed inset-0 m-auto p-5">
             <div className="h-16 border-b border-white flex justify-between items-center  mx-auto">

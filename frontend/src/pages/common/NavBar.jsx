@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Hamburger from 'hamburger-react'
 
 function NavBar() {
-  const navigate = useNavigate()
   const [isOpen, setOpen] = useState(false)
   // style={{backgroundImage:'linear-gradient(to bottom, #1f181d, #331825, #4a1627, #5f1121, #701013)'}}
   return (

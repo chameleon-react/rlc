@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 
+import {useState } from "react";
 const Screen5 = () => {
   const [persentage, setPersentage] = useState(0)
   const scrollHandler = (e) => {
