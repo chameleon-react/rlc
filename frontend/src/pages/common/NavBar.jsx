@@ -3,18 +3,18 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import Hamburger from 'hamburger-react'
 import axios from 'axios'
 import backendIP from '../../backendIP'
-
+import Select from 'react-select'
+ 
 function NavBar() {
   const navigate = useNavigate()
   const [isOpen, setOpen] = useState(false)
   const [data, setData] = useState([])
   useEffect(() => {
-    axios.get(`${backendIP}ads/viewall`).then(res=>{
+    axios.get(`${backendIP}ads/viewall`).then(res => {
       setData(res.data)
-      console.log(res.data)
     })
   }, [])
-  
+
   return (
     <>
       <div className='h-20 w-full overflow-hidden hidden lg:flex justify-between items-center px-24 text-white sticky top-0 z-50 bg-[#010315]' >
@@ -23,25 +23,39 @@ function NavBar() {
             <NavLink to={'/'}>
               HOME
             </NavLink>
-            </li>
+          </li>
           <li className='cursor-pointer'>
             <NavLink to={'/static/about'}>
               ABOUT
             </NavLink>
-            </li>
+          </li>
           <li className='cursor-pointer'>
             <NavLink to={'/static/faq'}>
               FAQ
             </NavLink>
-            </li>
+          </li>
         </ul>
         <div className="flex gap-4 h-12 items-center">
-          <select  className='h-8 w-52 bg-transparent border rounded-3xl outline-none pl-3 placeholder:text-white placeholder:text-xs flex items-center capitalize' onChange={e=>navigate(`/profile/${e.target.value}`)} placeholder='Search'>
+        
+
+          <>
+            <input type="text" className='h-8 w-52 bg-transparent border rounded-3xl outline-none pl-3 placeholder:text-white placeholder:text-xs flex items-center capitalize' onChange={event=>{
+              const profile = data.find(e=>e.adsTitle === event.target.value)
+              if(profile.id){
+                navigate(`/profile/${profile?.id}`)
+              }else window.alert('Profile not found')
+            }} placeholder='Search' list='ads' />
+            <datalist id='ads'>
+              {data.map(e => <option value={e.adsTitle} key={e.id} className='bg-black capitalize'>{e.adsTitle}</option>)}
+            </datalist>
+          </>
+
+          {/* <select  className='h-8 w-52 bg-transparent border rounded-3xl outline-none pl-3 placeholder:text-white placeholder:text-xs flex items-center capitalize' onChange={e=>navigate(`/profile/${e.target.value}`)} placeholder='Search'>
               {data.map(e=><option value={e.id} key={e.id} className='bg-black capitalize'>{e.adsTitle}</option>)}
-          </select>
-          
-              
-          
+          </select> */}
+
+
+
           <NavLink to={'/auth'}>
             <button className='w-24 h-8  rounded-3xl bg-[#006EF8] hover:w-[6.5rem] hover:h-10 duration-200 hover:text-lg'>Log In</button>
           </NavLink>
