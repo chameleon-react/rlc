@@ -31,8 +31,8 @@ function ProfileMobile({ data, id, setIsLogin }) {
                 <span className='capitalize text-3xl font-medium text-[#010315]'>{data.adsTitle?.split(' ')[0]}</span>
                 <div className="min-w-[250px] h-[43px] rounded-[21px] border border-[#513968] flex items-center justify-between px-[10px] ">
                     <div className="flag flex gap-2">
-                        <img src="/image/home/flag/UAE.png" className='h-[29px] w-[29px] rounded-full' alt="" />
-                        <span className='text-xl font-medium' >{data.nationality}</span>
+                        {/* <img src="/image/home/flag/UAE.png" className='h-[29px] w-[29px] rounded-full' alt="" /> */}
+                        <span className='text-xl font-medium flex-shrink-0' >{data.nationality}</span>
                     </div>
                     <div className="Region flex gap-2">
                         <span className='flex-shrink-0 text- '>Region :</span>

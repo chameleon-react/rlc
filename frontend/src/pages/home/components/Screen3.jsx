@@ -1,4 +1,4 @@
-import { useState} from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
 const Screen3 = () => {
     const [percentage, setPercentage] = useState(0)
@@ -14,7 +14,7 @@ const Screen3 = () => {
             <div className="hidden lg:block h-[1080px] overflow-y-scroll sc bg-[#010315]" onScroll={scrollHandler}>
                 <div className="h-[2000px] relative">
                     <div className="h-[1080px] sticky top-0  flex">
-                        <Profile />
+                        <Profile percentage={percentage} />
                         <div className="right w-1/2 h-full">
                             <Plans percentage={percentage} />
                             <div className="h-1/2 w-full   text-white lg:px-32 gap-10 ">
@@ -28,11 +28,12 @@ const Screen3 = () => {
                     </div>
                 </div>
             </div>
+
             <div className="block lg:hidden bg-[#010315] py-10 space-y-10">
                 <div className="h-[600px] overflow-y-scroll sc" onScroll={scrollHandler}>
                     <div className="relative h-[1200px]">
                         <div className="sticky top-0 h-[600px] flex justify-center items-center">
-                            
+
                             <div className="h-1/2 w-full flex justify-center items-center">
                                 <div className="w-[409px] h-[409px] relative flex justify-center items-center">
                                     <div className="platinum absolute top-0 right-0 z-50 w-[105px] h-[105px] flex justify-center items-center">
@@ -127,28 +128,78 @@ const Plans = ({ percentage }) => {
 
 
 
-const Profile = () => {
+const Profile = ({ percentage }) => {
     return (
 
         <div className="w-full lg:w-1/2 flex flex-wrap gap-10 justify-center items-center overflow-x-scroll sc">
-            <div className="flex flex-col gap-10 justify-center">
-                <Link to={'/profile/49'}>
-                    <img src="/image/home/profile/1.png" className='w-[239px] h-[391px] ' alt="" />
-                </Link>
-                <Link to={'/profile/196'}>
-                    <img src="/image/home/profile/2.png" className='w-[239px] h-[391px] ' alt="" />
-                </Link>
+            {percentage < 69 && <>
+                <div className="flex flex-col gap-10 justify-center">
+                    <Link to={'/profile/49'}>
+                        <img src="/image/home/profile/1.png" className='w-[239px] h-[391px] ' alt="Platinum" />
+                    </Link>
+                    <Link to={'/profile/196'}>
+                        <img src="/image/home/profile/2.png" className='w-[239px] h-[391px] ' alt="Platinum" />
+                    </Link>
 
-            </div>
-            <div className="flex flex-col gap-10 lg:mt-10 justify-center">
-                <Link to={'/profile/6'}>
-                    <img src="/image/home/profile/3.png" className='w-[239px] h-[391px] ' alt="" />
-                </Link>
-                <Link to={'/profile/222'}>
-                    <img src="/image/home/profile/4.png" className='w-[239px] h-[391px] ' alt="" />
-                </Link>
+                </div>
+                <div className="flex flex-col gap-10 lg:mt-10 justify-center">
+                    <Link to={'/profile/6'}>
+                        <img src="/image/home/profile/3.png" className='w-[239px] h-[391px] ' alt="Platinum" />
+                    </Link>
+                    <Link to={'/profile/222'}>
+                        <img src="/image/home/profile/4.png" className='w-[239px] h-[391px] ' alt="Platinum" />
+                    </Link>
 
-            </div>
+                </div>
+            </>}
+
+            {
+                percentage >= 69 && percentage <= 84 && <>
+                    <div className="flex flex-col gap-10 justify-center">
+                        <Link to={'/profile/49'}>
+                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Gold" />
+                        </Link>
+                        <Link to={'/profile/196'}>
+                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Gold" />
+                        </Link>
+
+                    </div>
+                    <div className="flex flex-col gap-10 lg:mt-10 justify-center">
+                        <Link to={'/profile/6'}>
+                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Gold" />
+                        </Link>
+                        <Link to={'/profile/222'}>
+                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Gold" />
+                        </Link>
+
+                    </div>
+                </>
+            }
+
+            {
+                percentage > 84 && <>
+                    <div className="flex flex-col gap-10 justify-center">
+                        <Link to={'/profile/49'}>
+                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Silver" />
+                        </Link>
+                        <Link to={'/profile/196'}>
+                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Silver" />
+                        </Link>
+
+                    </div>
+                    <div className="flex flex-col gap-10 lg:mt-10 justify-center">
+                        <Link to={'/profile/6'}>
+                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Silver" />
+                        </Link>
+                        <Link to={'/profile/222'}>
+                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Silver" />
+                        </Link>
+
+                    </div>
+                </>
+            }
+
+
         </div>
         // <div className="w-1/2 flex  gap-10 justify-center items-center">
         //     <div className="flex flex-col gap-10 justify-center">

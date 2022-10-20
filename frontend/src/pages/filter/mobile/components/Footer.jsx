@@ -4,8 +4,8 @@ const Footer = ({ setSearchbar, searchbar }) => {
     const navigate = useNavigate()
     return (
         
-        <div className="w-full h-[83px] flex justify-center fixed bottom-0 z-50">
-            <div className="w-2/5 h-full bg-[#F13353] rounded-tl-[4rem] flex justify-center items-center">
+        <div className="w-full h-[70px] flex justify-center fixed bottom-0 z-50">
+            <div className="w-2/5 h-full bg-[#F13353] rounded-tl-[3rem] flex justify-center items-center">
                 <img src="/mobile/filter/home.png" className='cursor-pointer' alt="" onClick={() => navigate('/')} />
             </div>
             <div className="w-1/3 h-full bg-[#F13353] flex justify-center">
@@ -19,7 +19,7 @@ const Footer = ({ setSearchbar, searchbar }) => {
                     <div className="h-1/2 w-full bg-white rounded-b-full"></div>
                 </div>
             </div>
-            <div className="w-2/5 h-full bg-[#F13353] rounded-tr-[4rem] flex justify-center items-center">
+            <div className="w-2/5 h-full bg-[#F13353] rounded-tr-[3rem] flex justify-center items-center">
                 <img src="/mobile/filter/profile.png" className='cursor-pointer' onClick={() => navigate('/auth')} alt="" />
             </div>
         </div>

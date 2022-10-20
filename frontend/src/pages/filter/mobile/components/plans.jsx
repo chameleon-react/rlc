@@ -9,7 +9,7 @@ export const Platinum = ({ profilePhoto, id, age, adsTitle, region }) => {
             </div>
             <div className="w-full h-[25px] bg-[#06175D] flex px-[10px] pt-[4px] justify-between text-white">
                 <div className="flex flex-col">
-                    <span className='text-[5px] font-medium'>{adsTitle}</span>
+                    <span className='text-[9px] font-medium'>{adsTitle}</span>
                     <span className='text-[5px] font-medium'>{region}</span>
                 </div>
                 <span className='text-[5px] font-medium'>{age} Y</span>
@@ -27,7 +27,7 @@ export const Gold = ({ profilePhoto, id ,age, adsTitle, region}) => {
             </div>
             <div className="w-full h-[25px] bg-[#E5AF2D] flex px-[10px] pt-[4px] justify-between text-white">
                 <div className="flex flex-col">
-                    <span className='text-[5px] font-medium'>{adsTitle}</span>
+                    <span className='text-[9px] font-medium'>{adsTitle}</span>
                     <span className='text-[5px] font-medium'>{region}</span>
                 </div>
                 <span className='text-[5px] font-medium'>{age} Y</span>
@@ -44,7 +44,7 @@ export const Silver = ({ profilePhoto, id,age, adsTitle, region }) => {
             </div>
             <div className="w-full h-[25px] bg-[#7D7D7D] flex px-[10px] pt-[4px] justify-between text-white">
                 <div className="flex flex-col">
-                    <span className='text-[5px] font-medium'>{adsTitle}</span>
+                    <span className='text-[9px] font-medium'>{adsTitle}</span>
                     <span className='text-[5px] font-medium'>{region}</span>
                 </div>
                 <span className='text-[5px] font-medium'>{age} Y</span>
@@ -61,7 +61,7 @@ export const None = ({ profilePhoto, id,age, adsTitle, region }) => {
             </div>
             <div className="w-full h-[25px] bg-[#17191E] flex px-[10px] pt-[4px] justify-between text-white">
                 <div className="flex flex-col">
-                    <span className='text-[5px] font-medium'>{adsTitle}</span>
+                    <span className='text-[9px] font-medium'>{adsTitle}</span>
                     <span className='text-[5px] font-medium'>{region}</span>
                 </div>
                 <span className='text-[5px] font-medium'>{age} Y</span>
