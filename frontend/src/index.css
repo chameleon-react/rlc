@@ -156,7 +156,7 @@ html {
     }
 
     100% {
-        width: 57px;
+        width: 190px;
         height: 57px;
         opacity: 1;
     }
@@ -168,29 +168,6 @@ html {
 
 
 
-
-
-
-
-.path {
-    stroke-dasharray: 1900;
-    stroke-dashoffset: 0;
-    animation: swirl-dash 4s both infinite;
-    /* stroke-width: calc(20px - 0.6vw); */
-}
-
-
-@keyframes swirl-dash {
-    from {
-        opacity: .5;
-        stroke-dashoffset: 1900
-    }
-
-    100% {
-        opacity: 1;
-        stroke-dashoffset: 0
-    }
-}
 
 
 .MuiSlider-track , .MuiSlider-rail, .MuiSlider-thumb{
