@@ -156,20 +156,20 @@ const Profile = ({ percentage }) => {
             {
                 percentage >= 69 && percentage <= 84 && <>
                     <div className="flex flex-col gap-10 justify-center">
-                        <Link to={'/profile/49'}>
-                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Gold" />
+                        <Link to={'/profile/37'}>
+                            <img src="/image/home/profile/5.png" className='w-[239px] h-[391px] text-white' alt="Gold" />
                         </Link>
-                        <Link to={'/profile/196'}>
-                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Gold" />
+                        <Link to={'/profile/48'}>
+                            <img src="/image/home/profile/6.png" className='w-[239px] h-[391px] text-white' alt="Gold" />
                         </Link>
 
                     </div>
                     <div className="flex flex-col gap-10 lg:mt-10 justify-center">
-                        <Link to={'/profile/6'}>
-                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Gold" />
+                        <Link to={'/profile/56'}>
+                            <img src="/image/home/profile/7.png" className='w-[239px] h-[391px] text-white' alt="Gold" />
                         </Link>
-                        <Link to={'/profile/222'}>
-                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Gold" />
+                        <Link to={'/profile/66'}>
+                            <img src="/image/home/profile/8.png" className='w-[239px] h-[391px] text-white' alt="Gold" />
                         </Link>
 
                     </div>
@@ -180,19 +180,19 @@ const Profile = ({ percentage }) => {
                 percentage > 84 && <>
                     <div className="flex flex-col gap-10 justify-center">
                         <Link to={'/profile/49'}>
-                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Silver" />
+                            <img src="/image/home/profile/9.png" className='w-[239px] h-[391px] text-white' alt="Silver" />
                         </Link>
                         <Link to={'/profile/196'}>
-                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Silver" />
+                            <img src="/image/home/profile/10.png" className='w-[239px] h-[391px] text-white' alt="Silver" />
                         </Link>
 
                     </div>
                     <div className="flex flex-col gap-10 lg:mt-10 justify-center">
                         <Link to={'/profile/6'}>
-                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Silver" />
+                            <img src="/image/home/profile/11.png" className='w-[239px] h-[391px] text-white' alt="Silver" />
                         </Link>
                         <Link to={'/profile/222'}>
-                            <img src="" className='w-[239px] h-[391px] border text-white' alt="Silver" />
+                            <img src="/image/home/profile/12.png" className='w-[239px] h-[391px] text-white' alt="Silver" />
                         </Link>
 
                     </div>

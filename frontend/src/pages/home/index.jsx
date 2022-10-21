@@ -7,8 +7,8 @@ import Screen1 from './components/Screen1';
 import Screen2 from './components/Screen2';
 import Screen3 from './components/Screen3';
 import Screen4 from './components/Screen4';
-import MobileFooter from '../filter/mobile/components/Footer'
 import { useNavigate } from 'react-router-dom';
+import MobileScreen1 from './components/MobileScreen1';
 
 
 
@@ -20,7 +20,12 @@ function Home() {
 const navigate = useNavigate()
   return (
     <div className="home w-full overflow-y-hidden">
-      <Screen1 />
+      <div className="hidden lg:block">
+        <Screen1 />
+      </div>
+      <div className="block lg:hidden">
+        <MobileScreen1 />
+      </div>
       <Screen2 />
       <Screen3 />
       <Screen4 />
