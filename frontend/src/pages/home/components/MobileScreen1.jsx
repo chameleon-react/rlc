@@ -11,9 +11,18 @@ function MobileScreen1() {
             </div>
             <div className="h-[calc(100vh-40px)] w-full bg-[#010315] relative overflow-hidden text-white">
                 <NavBar/>
-                <div className="h-full w-full flex relative">
-                    <img src="/image/home/globe.png" className='inset-x-0 top-10 m-auto absolute w-80 h-80' alt="" />
-                    <img src="/image/home/inner.png" className='inner absolute inset-x-0 top-3 m-auto  z-30 w-96 h-96' alt="" />
+                <div className="h-full w-full flex relative -top-20">
+                    <img alt='' src="/image/home/globe.png" className='m-auto inset-0  absolute w-80 h-80'  />
+                    <img alt='' src="/image/home/inner.png" className='inner inset-0  absolute  m-auto  z-30 w-96 h-96'  />
+
+                    <img src="/image/home/flag/Japan.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 top-60 -left-72'  />
+                    <img src="/image/home/flag/spain.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 top-32 left-[-22rem]'  />
+                    <img src="/image/home/flag/srilanka.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 -top-32 left-[-22rem]'  />
+                    <img src="/image/home/flag/UAE.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 -top-60 -left-72'  />
+                    <img src="/image/home/flag/malaysia.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 -top-60 left-72'  />
+                    <img src="/image/home/flag/UK.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 -top-32 left-[22rem]'  />
+                    <img src="/image/home/flag/bahrain.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 top-32 left-[22rem]'  />
+
                 </div>
             </div>
     </div>
