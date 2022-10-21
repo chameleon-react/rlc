@@ -14,9 +14,9 @@ function Activity({ setIsLogin,id }) {
             </div>
             <span className='text-xs'>40 Customer Review</span>
             <div className="mt-[15px] flex flex-col items-center gap-[13px]">
-                <div className="w-full lg:w-[459px] h-[20px] flex items-center justify-between">
+            <div className="w-full lg:w-[459px] h-[20px] flex items-center justify-between">
                     <span className='text-base font-medium'>Service</span>
-                    <div className="w-[200px] h-full bg-[#FAC1EA] rounded-[20px] flex justify-between items-center overflow-hidden">
+                    <div className="w-[200px] lg:w-[313px] h-full bg-[#FAC1EA] rounded-[20px] flex justify-between items-center overflow-hidden">
                         <div className="h-full w-[50%] rounded-[20px] bg-[#513968]"></div>
                         <span className='text-white'>50%</span>
                     </div>

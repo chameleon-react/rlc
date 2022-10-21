@@ -35,7 +35,10 @@ function FilterMobile() {
 console.log(filter)
     return (
         <div className='bg-[#AE0C37] pb-20'>
-            <NavBar />
+            {
+                !searchbar && <NavBar />
+            }
+            
             <div className="w-[90%] mx-auto h-[100px] rounded-t-[5px] bg-white"></div>
             <Footer setSearchbar={setSearchbar} searchbar={searchbar} />
             <Search searchbar={searchbar} fetchData={fetchData} setFilter={setFilter} filter={filter}/>

@@ -24,7 +24,7 @@ const Search = ({ searchbar,fetchData,setFilter,filter }) => {
     return (
         searchbar && <div className={`${searchbar && 'backdrop-blur-md'} h-screen fixed bottom-0 w-full duration-200 delay-75 z-[45]`}>
 
-            <div className={`${searchbar ? 'border bg-white' : 'h-0 border-0'}  fixed duration-500 bottom-0 w-full rounded-t-[30px] z-[45]  overflow-hidden  pb-[120px] p-[30px] blur-none`}>
+            <div className={`${searchbar ? 'border bg-white' : 'h-0 border-0'}  fixed duration-500 bottom-0 w-full rounded-t-[30px] z-[45]  overflow-hidden  pb-[100px] p-[30px] blur-none`}>
                 <div className="w-full flex justify-between">
                     <span>Price Range</span>
                     <select name="" id="" className='outline-none bg-transparent'>
@@ -57,9 +57,9 @@ const Search = ({ searchbar,fetchData,setFilter,filter }) => {
                         <option value="35-40">35 - 40</option>
                     </select>
                 </div>
-                <div className="mt-5">
+                <div className="mt-3">
                     <span>Hair Color</span>
-                    <div className=" ml-flex flex flex-wrap gap-5 mt-3">
+                    <div className=" ml-flex flex flex-wrap gap-x-5 gap-y-3 mt-3">
                         <button className={`${hair === 'Black' ? 'bg-[#F13353] text-white' : 'bg-white'} px-[17px] border rounded-md`} onClick={() => { setHair('Black');setFilter({...filter,appearance:{...filter.appearance,hair:'Black'}}) }}>Black</button>
                         <button className={`${hair === 'Brown' ? 'bg-[#F13353] text-white' : 'bg-white'} px-[17px] border rounded-md`} onClick={() => { setHair('Brown');setFilter({...filter,appearance:{...filter.appearance,hair:'Brown'}}) }}>Brown</button>
                         <button className={`${hair === 'Blonde' ? 'bg-[#F13353] text-white' : 'bg-white'} px-[17px] border rounded-md`} onClick={() => { setHair('Blonde');setFilter({...filter,appearance:{...filter.appearance,hair:'Blonde'}}) }}>Blonde</button>
@@ -67,9 +67,9 @@ const Search = ({ searchbar,fetchData,setFilter,filter }) => {
                         <button className={`${hair === 'White/Gray' ? 'bg-[#F13353] text-white' : 'bg-white'} px-[17px] border rounded-md`} onClick={() => { setHair('White/Gray');setFilter({...filter,appearance:{...filter.appearance,hair:'White/Gray'}}) }}>White/Gray</button>
                     </div>
                 </div>
-                <div className="mt-5">
+                <div className="mt-3">
                     <span>Eye Color</span>
-                    <div className=" ml-flex flex flex-wrap gap-5 mt-3">
+                    <div className=" ml-flex flex flex-wrap gap-x-5 gap-y-3 mt-3">
                         <button className={`${eye === 'Brown' ? 'bg-[#F13353] text-white' : 'bg-white'} px-[17px] border rounded-md`} onClick={() => { setEye('Brown') ; setFilter({...filter,appearance:{...filter.appearance,eye:'Brown'}}) }}>Brown</button>
                         <button className={`${eye === 'Blue' ? 'bg-[#F13353] text-white' : 'bg-white'} px-[17px] border rounded-md`} onClick={() => { setEye('Blue') ; setFilter({...filter,appearance:{...filter.appearance,eye:'Blue'}}) }}>Blue</button>
                         <button className={`${eye === 'Hazel' ? 'bg-[#F13353] text-white' : 'bg-white'} px-[17px] border rounded-md`} onClick={() => { setEye('Hazel') ; setFilter({...filter,appearance:{...filter.appearance,eye:'Hazel'}}) }}>Hazel</button>
@@ -78,9 +78,9 @@ const Search = ({ searchbar,fetchData,setFilter,filter }) => {
                         <button className={`${eye === 'Grey' ? 'bg-[#F13353] text-white' : 'bg-white'} px-[17px] border rounded-md`} onClick={() => { setEye('Grey') ; setFilter({...filter,appearance:{...filter.appearance,eye:'Grey'}}) }}>Grey</button>
                     </div>
                 </div>
-                <div className="mt-5">
+                <div className="mt-3">
                     <span>Interested In </span>
-                    <fieldset className=" flex flex-wrap gap-y-3  flex-start mt-5">
+                    <fieldset className=" flex flex-wrap gap-y-2  flex-start mt-3">
 
                         <div className="w-1/2 flex gap-3">
                             <input className='peer checked:bg-[#F13353]' type="radio" name="interest" value={'Male'} id="radio1" />
@@ -104,7 +104,7 @@ const Search = ({ searchbar,fetchData,setFilter,filter }) => {
 
                     </fieldset>
                 </div>
-                <div className="mt-5 flex gap-5">
+                <div className="mt-3 flex gap-5">
                     <button className='w-[191px] h-[30px] rounded-lg bg-[#F13353] text-white' onClick={()=>{fetchData()}}>Show Result</button>
                     <button>Clear</button>
                 </div>
