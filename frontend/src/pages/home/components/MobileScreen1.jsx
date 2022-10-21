@@ -11,8 +11,9 @@ function MobileScreen1() {
             </div>
             <div className="h-[calc(100vh-40px)] w-full bg-[#010315] relative overflow-hidden text-white">
                 <NavBar/>
-                <div className="h-full w-full">
-                    <img src="/image/home/globe.png" className='inset-0 mx-auto' alt="" />
+                <div className="h-full w-full flex relative">
+                    <img src="/image/home/globe.png" className='inset-x-0 top-10 m-auto absolute w-80 h-80' alt="" />
+                    <img src="/image/home/inner.png" className='inner absolute inset-x-0 top-3 m-auto  z-30 w-96 h-96' alt="" />
                 </div>
             </div>
     </div>
