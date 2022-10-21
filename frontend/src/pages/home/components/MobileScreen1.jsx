@@ -14,35 +14,41 @@ function MobileScreen1() {
                 <div className="h-full w-full flex relative -top-20">
                     <img alt='' src="/image/home/globe.png" className='m-auto inset-0  absolute w-80 h-80' />
                     <img alt='' src="/image/home/inner.png" className='inner inset-0  absolute  m-auto  z-30 w-96 h-96' />
+
+
+                    <div style={{animationDuration:'2s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden top-60 -left-72 h-10 w-10" >
+                        <img alt='' className='' src="/image/home/flag/Japan.png" />
+                    </div>
+
+
+                    <div style={{animationDuration:'2.5s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden top-32 left-[-22rem] h-10 w-10" >
+                        <img alt='' className='' src="/image/home/flag/spain.png" />
+                    </div>
+
+
+                    <div style={{animationDuration:'3s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-32 left-[-22rem] h-10 w-10" >
+                        <img alt='' className='' src="/image/home/flag/srilanka.png" />
+                    </div>
+
+
+                    <div style={{animationDuration:'3.5s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-60 -left-72 h-10 w-10" >
+                        <img alt='' className='' src="/image/home/flag/UAE.png" />
+                    </div>
+
+
+                    <div style={{animationDuration:'4s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-60 left-72 h-10 w-10" >
+                        <img alt='' className='' src="/image/home/flag/malaysia.png" />
+                    </div>
+
+
+                    <div style={{animationDuration:'4.5s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-32 left-[22rem] h-10 w-10" >
+                        <img alt='' className='' src="/image/home/flag/UK.png" />
+                    </div>
+
                     
-                    <Link to={'/filter'}>
-                        <img src="/image/home/flag/Japan.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 top-60 -left-72' />
-                    </Link>
-                    <Link to={'/filter'}>
-                        <img src="/image/home/flag/spain.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 top-32 left-[-22rem]' />
-                    </Link>
-                    <Link to={'/filter'}>
-                        <img src="/image/home/flag/srilanka.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 -top-32 left-[-22rem]' />
-                    </Link>
-                    <Link to={'/filter'}>
-                        <img src="/image/home/flag/UAE.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 -top-60 -left-72' />
-                    </Link>
-                    <Link to={'/filter'}>
-                        <img src="/image/home/flag/malaysia.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 -top-60 left-72' />
-                    </Link>
-                    <Link to={'/filter'}>
-                        <img src="/image/home/flag/UK.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 -top-32 left-[22rem]' />
-                    </Link>
-                    <Link to={'/filter'}>
-                        <img src="/image/home/flag/bahrain.png" alt='' className='h-10 w-10 absolute m-auto inset-0 z-50 top-32 left-[22rem]' />
-                    </Link>
-
-
-
-
-
-
-
+                   <div style={{animationDuration:'5s'}} className='mobileflag rounded-full  absolute m-auto inset-0 z-50 top-32 left-[22rem] h-10 w-10' >
+                        <img alt='' className='' src="/image/home/flag/bahrain.png" />
+                    </div>
 
                 </div>
             </div>

@@ -90,18 +90,19 @@ html {
     animation-duration: 2s;
 }
 
-@media screen and (min-width: 1024px)  {
+@media screen and (min-width: 1024px) {
     @keyframes inner {
         0% {
             width: 0px;
             height: 0px;
             opacity: .5;
         }
+
         50% {
             width: 700px;
             height: 700px;
         }
-    
+
         100% {
             width: 590px;
             height: 590px;
@@ -110,18 +111,19 @@ html {
     }
 }
 
-@media screen and (max-width: 1024px)  {
+@media screen and (max-width: 1024px) {
     @keyframes inner {
         0% {
             width: 0px;
             height: 0px;
             opacity: .5;
         }
+
         50% {
             width: 400px;
             height: 400px;
         }
-    
+
         100% {
             width: 384px;
             height: 384x;
@@ -162,13 +164,8 @@ html {
     animation-name: flag;
 }
 
-
 @keyframes flag {
-    0% {
-        width: 0px;
-        height: 0px;
-        opacity: 0;
-    }
+   
 
     50% {
         width: 0px;
@@ -183,6 +180,28 @@ html {
     }
 }
 
+.mobileflag {
+    animation-name: mobileflag;
+}
+
+@keyframes mobileflag {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+    }
+    50% {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+    }
+
+    100% {
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+    }
+}
 
 
 
@@ -190,9 +209,10 @@ html {
 
 
 
-
-.MuiSlider-track , .MuiSlider-rail, .MuiSlider-thumb{
-    color:#F13353;
+.MuiSlider-track,
+.MuiSlider-rail,
+.MuiSlider-thumb {
+    color: #F13353;
 }
 
 
