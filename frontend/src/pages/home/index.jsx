@@ -17,7 +17,7 @@ function Home() {
   useEffect(() => {
     axios.post(`${backendIP}analatics`)
   }, [])
-const navigate = useNavigate()
+  const navigate = useNavigate()
   return (
     <div className="home w-full overflow-y-hidden">
       <div className="hidden lg:block">
@@ -29,19 +29,17 @@ const navigate = useNavigate()
       <Screen2 />
       <Screen3 />
       <Screen4 />
+      <Footer />
       <div className="block lg:hidden">
         <div className="fixed  -bottom-2 z-50 w-full h-[80px]">
           <img src="/mobile/filter/footer.png" className="w-full" alt="" />
-          <img src="/mobile/filter/home.png" className='cursor-pointer absolute top-[25px] left-[70px]' alt=""  />
+          <img src="/mobile/filter/home.png" className='cursor-pointer absolute top-[25px] left-[70px]' alt="" />
           <div className="h-[63px] w-[63px] bg-[#AE0C37] rounded-full absolute z-50 -top-5 inset-x-0 mx-auto flex justify-center items-center" onClick={() => navigate('/filter')}>
-            
-          <img src="/mobile/filter/search.png" className='cursor-pointer' alt=""/>
+
+            <img src="/mobile/filter/search.png" className='cursor-pointer' alt="" />
           </div>
           <img src="/mobile/filter/profile.png" className='cursor-pointer absolute top-[25px] right-[70px]' onClick={() => navigate('/auth')} alt="" />
         </div>
-      </div>
-      <div className="hidden lg:block">
-        <Footer />
       </div>
     </div>
   );
