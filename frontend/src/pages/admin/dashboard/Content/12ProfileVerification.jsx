@@ -62,31 +62,8 @@ const Card = ({ id, verificationPhoto, adsTitle, view, region, fetchData }) => {
 
             </div>
             {
-                rejection && <Modal setShowModal={setRejection} verificationPhoto={verificationPhoto}/>
+                rejection && <Modal setShowModal={setRejection} verificationPhoto={verificationPhoto} />
             }
-            {/* {
-                rejection && <div className="absolute -bottom-[10rem] -right-[8rem] w-64  border rounded-xl bg-white flex flex-col justify-center gap-5">
-
-                    <div class="flex items-center">
-                        <input id="notCorrect" type="radio" value="Verification Image is Not Correct" name="reject" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                        <label for="notCorrect" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Verification Image is Not Correct</label>
-                    </div>
-                    
-                    <div class="flex items-center">
-                        <input checked id="quality" type="radio" value="Image quality in poor" name="reject" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                        <label for="quality" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Image quality in poor</label>
-                    </div>
-
-                    <div class="flex items-center">
-                        <input checked id="recognise" type="radio" value="We Can't recognise this you" name="reject" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                        <label for="recognise" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">We Can't recognise this you</label>
-                    </div>
-                    <div className="button w-full flex justify-center  mb-5">
-                        <button className='border-2 p-2 rounded-2xl hover:rounded-xl border-[#E328AF]'>Sumbit</button>
-                    </div>
-
-                </div>
-            } */}
 
         </div>
     )

@@ -30,13 +30,13 @@ function Customers() {
                             <th className='w-[20%]'>Username</th>
                             <th className='w-[20%]'>Email</th>
                             <th className='w-[20%]'>Credit</th>
-                            <th className='w-[20%]'>Joind</th>
+                            <th className='w-[20%]'>Joined</th>
 
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            data.map(e=><tr className=''>
+                            data.map(e => <tr className=''>
                                 <td className='w-[20%]'>{e.id}</td>
                                 <td className='w-[20%]'>{e.username}</td>
                                 <td className='w-[20%]'>{e.email}</td>

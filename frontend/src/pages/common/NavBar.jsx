@@ -4,7 +4,7 @@ import Hamburger from 'hamburger-react'
 import axios from 'axios'
 import backendIP from '../../backendIP'
 import Select from 'react-select'
- 
+
 function NavBar() {
   const navigate = useNavigate()
   const [isOpen, setOpen] = useState(false)
@@ -14,7 +14,7 @@ function NavBar() {
       setData(res.data)
     })
   }, [])
-
+  const [adsTitle, setAdsTitle] = useState('')
   return (
     <>
       <div className='h-20 w-full overflow-hidden hidden lg:flex justify-between items-center px-24 text-white sticky top-0 z-50 bg-[#010315]' >
@@ -36,18 +36,22 @@ function NavBar() {
           </li>
         </ul>
         <div className="flex gap-4 h-12 items-center">
-        
+
 
           <>
-            <input type="text" className='h-8 w-52 bg-transparent border rounded-3xl outline-none pl-3 placeholder:text-white placeholder:text-xs flex items-center capitalize' onChange={event=>{
-              const profile = data.find(e=>e.adsTitle === event.target.value)
-              if(profile.id){
-                navigate(`/profile/${profile?.id}`)
-              }else window.alert('Profile not found')
-            }} placeholder='Search' list='ads' />
-            <datalist id='ads'>
+            <input type="text" className='h-8 w-52 bg-transparent border rounded-3xl outline-none pl-3 placeholder:text-white placeholder:text-xs flex items-center capitalize' onChange={e => setAdsTitle(e.target.value)} placeholder='Search' />
+
+            <button className='px-3 h-8  bg-[#FB0202] rounded-3xl hover:px-4 hover:h-10 duration-200 hover:text-lg'
+              onClick={() => {
+                const profile = data.find(e => e.adsTitle.toLowerCase()?.includes(adsTitle.toLowerCase()))
+                if (profile) {
+                  navigate(`/profile/${profile?.id}`)
+                } else window.alert('Profile not found')
+              }}>Search</button>
+
+            {/* <datalist id='ads'>
               {data.map(e => <option value={e.adsTitle} key={e.id} className='bg-black capitalize'>{e.adsTitle}</option>)}
-            </datalist>
+            </datalist> */}
           </>
 
           {/* <select  className='h-8 w-52 bg-transparent border rounded-3xl outline-none pl-3 placeholder:text-white placeholder:text-xs flex items-center capitalize' onChange={e=>navigate(`/profile/${e.target.value}`)} placeholder='Search'>
