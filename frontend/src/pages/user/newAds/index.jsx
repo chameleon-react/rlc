@@ -51,8 +51,13 @@ function NewAds() {
                 <div className="h-[10%]">
 
                     {
-                        questionNo > 5 && <div className=" h-full flex justify-center items-end">
+                        questionNo > 5 && questionNo <=8 && <div className=" h-full flex justify-center items-end">
                             <img src="/image/common/almost-there.png" className='h-14' alt="" />
+                        </div>
+                    }
+                    {
+                        questionNo > 8 && <div className="h-full flex justify-center items-end">
+                            <span>Only 2 Left</span>
                         </div>
                     }
                 </div>
