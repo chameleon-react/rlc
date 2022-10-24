@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import Hamburger from 'hamburger-react'
 import axios from 'axios'
 import backendIP from '../../backendIP'
-import Select from 'react-select'
 
 function NavBar() {
   const navigate = useNavigate()
