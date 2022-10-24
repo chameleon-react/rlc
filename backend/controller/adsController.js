@@ -1,10 +1,10 @@
 const adsModel = require('../model/adsModel')
 
 exports.create = async (req, res) => {
-    const { username, adsTitle, phoneNo, email, introduction, description, currencyType, service, location, nationality, language, appearance, socialMedia, charge, gallery, profilePhoto,serviceCharge,region } = req.body
-    if (username && adsTitle && phoneNo && email && introduction && description && location && nationality && language && appearance && socialMedia && charge && profilePhoto && serviceCharge && region,gallery) {
+    const { username, adsTitle, phoneNo, email, introduction, description, currencyType, service, location, nationality, language, appearance, socialMedia, charge, gallery, profilePhoto, serviceCharge, region } = req.body
+    if (username && adsTitle && phoneNo && email && introduction && description && location && nationality && language && appearance && socialMedia && charge && profilePhoto && serviceCharge && region, gallery) {
         try {
-            await adsModel.create({ username, adsTitle, region, location, phoneNo, email, introduction, description, nationality, language, appearance, socialMedia, currencyType, charge, service, profilePhoto, gallery,serviceCharge })
+            await adsModel.create({ username, adsTitle, region, location, phoneNo, email, introduction, description, nationality, language, appearance, socialMedia, currencyType, charge, service, profilePhoto, gallery, serviceCharge })
             res.send(true)
         } catch (error) {
             console.log(error.message)
@@ -51,6 +51,7 @@ exports.view = async (req, res) => {
 
 exports.edit = async (req, res) => {
     const { editing, id } = req.body
+    console.log(editing)
     if (id, editing) {
         try {
             await adsModel.update({ ...editing }, { where: { id } })
@@ -84,8 +85,8 @@ exports.profile = async (req, res) => {
         try {
             const found = await adsModel.findOne({ where: { id } })
             if (found?.visibility) {
-                await adsModel.increment({ view: 1 }, { where: { id } })                
-                    adsModel.update({analytics:{...found.analytics,[date]:found.analytics[date]+1 || 1}},{where:{id}})
+                await adsModel.increment({ view: 1 }, { where: { id } })
+                adsModel.update({ analytics: { ...found.analytics, [date]: found.analytics[date] + 1 || 1 } }, { where: { id } })
 
                 res.send(found)
             } else res.send(false)
@@ -138,11 +139,11 @@ exports.verificationCount = async (req, res) => {
     }
 }
 
-exports.analytics = async (req,res) =>{
-    const {id} = req.query
-    if(id) {
-        const found = await adsModel.findOne({where:{id},raw:true})
+exports.analytics = async (req, res) => {
+    const { id } = req.query
+    if (id) {
+        const found = await adsModel.findOne({ where: { id }, raw: true })
         res.send(found.analytics)
-    }else res.send(false)
+    } else res.send(false)
 
 }

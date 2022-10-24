@@ -3,7 +3,7 @@ import { hideSidebar, setMenuSelector } from '../../../../redux/slice/utilSlice'
 import { useDispatch, useSelector } from 'react-redux'
 function Sidebar() {
     const dispatch = useDispatch()
-    const {  showSidebar } = useSelector(state => state.util)
+    const { showSidebar } = useSelector(state => state.util)
     return (
         <div className={`${!showSidebar && 'hidden'} sidebar min-h-screen w-64 border-r shrink-0 text-[#a5a5a5]`}>
             <div className="h-20 w-full  flex justify-around items-center">
@@ -24,7 +24,7 @@ function Sidebar() {
                 <Menu goto={3} title='Home' icon={'house'} />
                 <Menu goto={1} title='Manage My Adverts' icon={'edit'} />
                 <Menu goto={2} title='Buy First Page Position' icon={'leaderboard'} />
-                <Menu goto={11} title='Ads Analytics' icon={'analytics'}/>
+                <Menu goto={11} title='Ads Analytics' icon={'analytics'} />
                 {/* <Menu goto={4} title='Payments' icon={'rocket'} /> */}
                 <Menu goto={5} title='Earn Free Credit' icon={'bar_chart'} />
                 <Menu goto={6} title='Comments' icon={'comment'} />

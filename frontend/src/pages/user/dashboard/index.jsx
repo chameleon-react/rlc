@@ -17,6 +17,7 @@ import axios from 'axios'
 import backendIP from '../../../backendIP'
 import Home from './content/3Home'
 import AdsAnalatics from './content/11AdsAnalatics'
+import Services from './content/12Services'
 function UserDashboard() {
     const { menuSelector } = useSelector(state => state.util)
     const { username } = useSelector(state => state.user)
@@ -56,7 +57,8 @@ function UserDashboard() {
                         {menuSelector === 8 && <BacklistedClients />}
                         {menuSelector === 9 && <VerifyAds />}
                         {menuSelector === 10 && <EditAds />}
-                        {menuSelector === 11 && <AdsAnalatics/>}
+                        {menuSelector === 11 && <AdsAnalatics />}
+                        {menuSelector === 12 && <Services />}
 
                     </div>
                 </div>

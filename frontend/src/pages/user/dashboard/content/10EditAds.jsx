@@ -4,9 +4,10 @@ import GroupButton from './components/GroupButton'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import backendIP from '../../../../backendIP'
-import { useSelector,useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { setProfilePhoto } from '../../../../redux/slice/adsSlice'
 import { useDropzone } from 'react-dropzone'
+import { setMenuSelector } from '../../../../redux/slice/utilSlice'
 
 function EditAds() {
     const { id } = useSelector(state => state.ads)
@@ -65,11 +66,12 @@ function EditAds() {
     }, [])
 
     const update = () => {
-                axios.post(`${backendIP}ads/edit`, { editing, id }).then(res => {
-                    window.alert('Done')
-                    fetchApi()
-    })}
-    
+        axios.post(`${backendIP}ads/edit`, { editing, id }).then(res => {
+            window.alert('Done')
+            fetchApi()
+        })
+    }
+    const dispatch = useDispatch()
     return (
         <div className=''>
             <Title title={'Edit Ads'} />
@@ -82,14 +84,6 @@ function EditAds() {
                 <InputField setEditing={setEditing} editing={editing} htmlFor={'location'} change={'location'} label='Location' value={editing.location} />
                 <InputField setEditing={setEditing} editing={editing} htmlFor={'nationality'} change={'nationality'} label='Nationality' value={editing.nationality} />
                 <InputField setEditing={setEditing} editing={editing} htmlFor={'language'} change={'language'} label='Language' value={editing.language} />
-
-                {/* <InputField setEditing={setEditing} editing={editing} htmlFor={'website'} change={'socialMedia.website'} label='Website' value={editing.socialMedia.website} />
-                <InputField setEditing={setEditing} editing={editing} htmlFor={'videoUrl'} change={'socialMedia.videoUrl'} label='Video Url' value={editing.socialMedia.videoUrl} />
-                <InputField setEditing={setEditing} editing={editing} htmlFor={'instagram'} change={'socialMedia.instagram'} label='Instagram' value={editing.socialMedia.instagram} />
-                <InputField setEditing={setEditing} editing={editing} htmlFor={'twitter'} change={'socialMedia.twitter'} label='Twitter' value={editing.socialMedia.twitter} />
-                <InputField setEditing={setEditing} editing={editing} htmlFor={'twitter'} change={'socialMedia.twitter'} label='Twitter' value={editing.socialMedia.telegram} />
-                <InputField setEditing={setEditing} editing={editing} htmlFor={'facebook'} change={'socialMedia.facebook'} label='Facebook' value={editing.socialMedia.facebook} />
-                <InputField setEditing={setEditing} editing={editing} htmlFor={'tiktok'} change={'socialMedia.tiktok'} label='Tik Tok' value={editing.socialMedia.tiktok} /> */}
 
                 <SocialMedia socialMedia={editing.socialMedia} setEditing={setEditing} editing={editing} htmlFor={'website'} change={'website'} label='Website' value={editing.socialMedia.website} />
                 <SocialMedia socialMedia={editing.socialMedia} setEditing={setEditing} editing={editing} htmlFor={'videoUrl'} change={'videoUrl'} label='Video Url' value={editing.socialMedia.videoUrl} />
@@ -105,19 +99,24 @@ function EditAds() {
                 <Appearance appearance={editing.appearance} setEditing={setEditing} editing={editing} htmlFor={'age'} change={'age'} label='Your Age' value={editing.appearance.age} />
                 <Appearance appearance={editing.appearance} setEditing={setEditing} editing={editing} htmlFor={'measurement'} change={'measurement'} label='Measurements' value={editing.appearance.measurement} />
                 <Appearance appearance={editing.appearance} setEditing={setEditing} editing={editing} htmlFor={'hair'} change={'hair'} label='Hairs' value={editing.appearance.hair} />
-                    
-                <div className="right   ">
-                    <img src={editing.profilePhoto} className='w-80 h-60 mb-5' alt="" />
-                    <ProfilePhoto setEditing={setEditing} editing={editing} username={editing.username}/>
+                <div className="w-72">
+                    <label >{'Edit Service'}</label>
+                    <button className='h-12 w-64 mt-2 focus:outline-[#6d00bc] rounded-lg pl-5 border border-red-400' onClick={() => dispatch(setMenuSelector(12))}>Edit Services</button>
                 </div>
-                
+
+
+                <div className="right">
+                    <img src={editing.profilePhoto} className='w-80 h-60 mb-5' alt="" />
+                    <ProfilePhoto setEditing={setEditing} editing={editing} username={editing.username} />
+                </div>
+
             </div>
-            <button className='px-5 border rounded-lg h-12 absolute right-10 bottom-10 bg-[#6d00bc] text-white flex justify-center items-center gap-2 font-semibold text-lg' onClick={update}>
-                    <span className="material-symbols-outlined">
-                        settings
-                    </span>
-                    Save Your Editing
-                </button>
+            <button className='px-5 border rounded-lg h-12 fixed right-10 bottom-5 bg-[#6d00bc] text-white flex justify-center items-center gap-2 font-semibold text-lg' onClick={update}>
+                <span className="material-symbols-outlined">
+                    settings
+                </span>
+                Save Your Editing
+            </button>
         </div>
     )
 }
@@ -165,7 +164,7 @@ const Appearance = ({ htmlFor, label, value, change, setEditing, editing, social
     )
 }
 
-const ProfilePhoto = ({editing, setEditing,username}) => {
+const ProfilePhoto = ({ editing, setEditing, username }) => {
     const dispatch = useDispatch()
     // eslint-disable-next-line
     const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
@@ -177,11 +176,11 @@ const ProfilePhoto = ({editing, setEditing,username}) => {
         onDrop: acceptedFiles => {
             const data = new FormData()
             const name = `${username}${new Date().toISOString()}`
-            data.append('name',name)
-            data.append('profile',acceptedFiles[0])
-            axios.post(`${backendIP}file/profile`,data).then(res=>{window.alert('Profile is Uploaded')}).then(res=>{
+            data.append('name', name)
+            data.append('profile', acceptedFiles[0])
+            axios.post(`${backendIP}file/profile`, data).then(res => { window.alert('Profile is Uploaded') }).then(res => {
                 dispatch(setProfilePhoto(`${backendIP}image/${name}.png`))
-                setEditing({...editing,profilePhoto:`${backendIP}image/${name}.png`})
+                setEditing({ ...editing, profilePhoto: `${backendIP}image/${name}.png` })
             })
         }
     });
