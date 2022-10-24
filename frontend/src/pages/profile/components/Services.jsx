@@ -29,7 +29,7 @@ function Services({ data }) {
                                 {e === 'CIM_ComeInMouth' ? <span className='text-sm font-light'>C I M</span> :
                                     e === 'COB_ComeOnBody' ? <span className='text-sm font-light'>C O B</span> :
                                         e === 'OWO_OralWithoutCondom' ? <span className='text-sm font-light'>O W O</span> : <span className='text-sm font-light'>{`${e.replace(/([A-Z])/g, " $1").charAt(0).toUpperCase()}${e.replace(/([A-Z])/g, " $1").slice(1)}`}</span>}
-                                <span className='text-sm font-light'>{data.serviceCharge[e] || 'Not Specified'}</span>
+                                <span className='text-sm font-light'>{data.serviceCharge[e]}</span>
                             </div>
                         )
                     }

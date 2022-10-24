@@ -57,7 +57,7 @@ function NewAds() {
                     }
                     {
                         questionNo > 8 && <div className="h-full flex justify-center items-end">
-                            <span>Only 2 Left</span>
+                            <img src="/image/common/only-two-left.png" className='h-14' alt="" />
                         </div>
                     }
                 </div>

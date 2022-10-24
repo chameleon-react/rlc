@@ -12,25 +12,25 @@ import { setProfilePhoto } from '../../../../redux/slice/userSlice'
 
 function ManageAds() {
     const dispatch = useDispatch()
-    const {username} = useSelector(state=>state.user)
+    const { username } = useSelector(state => state.user)
     const [data, setData] = useState([])
     const [showModal, setShowModal] = React.useState(false);
-    const fetchData = ()=>{
-        axios.get(`${backendIP}ads/userads`,{params:{username}}).then(res=>{
+    const fetchData = () => {
+        axios.get(`${backendIP}ads/userads`, { params: { username } }).then(res => {
             setData(res.data)
             // eslint-disable-next-line
-            if(res.data==false){
+            if (res.data == false) {
                 setShowModal(true)
-            }else{
+            } else {
                 dispatch(setProfilePhoto(res.data[0].profilePhoto))
             }
         })
     }
     useEffect(() => {
-      fetchData()
-   // eslint-disable-next-line
+        fetchData()
+        // eslint-disable-next-line
     }, [])
-    
+
     const [selection, setSelection] = useState(1)
     return (
         <div>
@@ -46,17 +46,17 @@ function ManageAds() {
             </div>
             <div className="w-full flex gap-10 flex-wrap mt-10 pb-10">
                 {
-                    selection === 1 &&  data.map(e=><Card key={e.id} fetchData={fetchData} id={e.id} profilePhoto={e.profilePhoto} adsTitle={e.adsTitle} view={e.view} region={e.region} verified={e.verified}/>)
+                    selection === 1 && data.map(e => <Card key={e.id} fetchData={fetchData} id={e.id} profilePhoto={e.profilePhoto} adsTitle={e.adsTitle} view={e.view} region={e.region} verified={e.verified} />)
                 }
                 {
-                    selection === 2 && data.map(e=> e.visibility && <Card key={e.id} fetchData={fetchData} id={e.id} profilePhoto={e.profilePhoto} adsTitle={e.adsTitle} view={e.view} region={e.region} verified={e.verified} />)
+                    selection === 2 && data.map(e => e.visibility && <Card key={e.id} fetchData={fetchData} id={e.id} profilePhoto={e.profilePhoto} adsTitle={e.adsTitle} view={e.view} region={e.region} verified={e.verified} />)
                 }
                 {
-                    selection === 3 && data.map(e=> !e.visibility && <Card key={e.id} fetchData={fetchData} id={e.id} profilePhoto={e.profilePhoto} adsTitle={e.adsTitle} view={e.view} region={e.region} verified={e.verified}/>)
+                    selection === 3 && data.map(e => !e.visibility && <Card key={e.id} fetchData={fetchData} id={e.id} profilePhoto={e.profilePhoto} adsTitle={e.adsTitle} view={e.view} region={e.region} verified={e.verified} />)
                 }
             </div>
             {
-                showModal && <Modal setShowModal={setShowModal}/>
+                showModal && <Modal setShowModal={setShowModal} />
             }
         </div>
     )
@@ -65,10 +65,49 @@ function ManageAds() {
 export default ManageAds
 
 
-const Card = ({ id, profilePhoto, adsTitle, view, region,fetchData,verified }) => {
+const Card = ({ id, profilePhoto, adsTitle, view, region, fetchData, verified }) => {
     const dispatch = useDispatch()
+    useEffect(() => {
+      axios.get(`${backendIP}ads/profile`,{params:{id}}).then(res=>{
+        setEnabled(res.data.visibility)
+      })
+    }, [])
+    
+    const [enabled, setEnabled] = useState(true)
     return (
         <div className="card h-96 w-64 flex flex-col  border items-center justify-center  relative">
+
+            <div className="absolute right-0 top-2  flex justify-center items-center gap-1">
+                <div className="flex">
+                    <label class="inline-flex relative items-center  cursor-pointer">
+                        <input
+                            type="checkbox"
+                            className="sr-only peer"
+                            checked={!enabled}
+                            readOnly
+                            onChange={()=>{
+                                axios.post(`${backendIP}ads/edit`,{editing:{visibility:enabled},id})
+                                window.alert('Updated')
+                            }}
+                        />
+                        <div
+                            onClick={() => {
+                                setEnabled(!enabled);
+                                
+                            }}
+                            className="w-11 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"
+                        ></div>
+                        
+                    </label>
+                </div>
+                <div className="group">
+                    <div className='w-4 h-4 border rounded-full flex justify-center items-center border-blue-400 text-blue-400'>i</div>
+                    <div className="hidden group-hover:flex border absolute   border-blue-400 duration-200">
+                        <p>Vacation Mode </p>
+                    </div>
+                </div>
+            </div>
+
             <div className="h-[40%] w-[60%] rounded-full border absolute top-2">
                 <img src={profilePhoto} alt="" className='h-full w-full rounded-full object-cover' />
             </div>
@@ -85,34 +124,34 @@ const Card = ({ id, profilePhoto, adsTitle, view, region,fetchData,verified }) =
                 </span>
             </div>
             <div className="h-[15%] w-full absolute bottom-5 flex justify-around items-center ">
-                <button   className='border-2 border-[#6426c3] rounded-2xl h-10 w-16 justify-center items-center flex' 
-                    onClick={()=>{
-                        if(!verified){
+                <button className='border-2 border-[#6426c3] rounded-2xl h-10 w-16 justify-center items-center flex'
+                    onClick={() => {
+                        if (!verified) {
                             dispatch(setId(id))
                             dispatch(setAdsTitle(adsTitle))
                             dispatch(setMenuSelector(9))
                         } else window.alert('This ads is already verified')
-                    }}  
+                    }}
                 >Verify</button>
 
-                <button className='border-2 rounded-2xl h-10 w-16 border-[#5ECFFF]' 
-                    onClick={()=>{
+                <button className='border-2 rounded-2xl h-10 w-16 border-[#5ECFFF]'
+                    onClick={() => {
                         dispatch(setId(id))
                         dispatch(setAdsTitle(adsTitle))
                         dispatch(setMenuSelector(10))
                     }}
                 >Edit</button>
 
-                <button className='border-2 rounded-2xl h-10 w-16 border-[#E328AF]' onClick={()=>{
+                <button className='border-2 rounded-2xl h-10 w-16 border-[#E328AF]' onClick={() => {
                     const confirm = window.confirm("Do you Realy Want to Delete this Ads")
-                    if(confirm){
-                        axios.post(`${backendIP}ads/delete`,{id}).then(res=>{
-                            if(res.data){
+                    if (confirm) {
+                        axios.post(`${backendIP}ads/delete`, { id }).then(res => {
+                            if (res.data) {
                                 fetchData()
                                 window.alert("Successfully Deleted")
-                            }else window.alert('Something is error')
+                            } else window.alert('Something is error')
                         })
-                    }else window.alert('Thank you')
+                    } else window.alert('Thank you')
                 }}>Delete</button>
 
             </div>
