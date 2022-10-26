@@ -19,9 +19,13 @@ function ProfileMobile({ data, id, setIsLogin }) {
             <NavBar />
             <div className="w-[90%] mx-auto h-[100px] rounded-t-[5px] bg-white"></div>
             <div className="h-12 max-w-[1244px] bg-[#513968] px-[18px] flex justify-between items-center text-white text-sm mx-auto">
-                <Link to={`/profile/${Number(id) - 1}`}>
+                {console.log(typeof Number(id))}
+                {
+                    Number(id) === 1 ? <button className='w-[81px] h-[29px] rounded-2xl bg-[#946FB7] hover:w-[90px] hover:h-[35px] hover:text-lg duration-200' >Previous</button> : <Link to={`/profile/${Number(id) - 1}`}>
                     <button className='w-[81px] h-[29px] rounded-2xl bg-[#946FB7] hover:w-[90px] hover:h-[35px] hover:text-lg duration-200' >Previous</button>
                 </Link>
+                }
+                
                 <Contact data={data} />
                 <Link to={`/profile/${Number(id) + 1}`}>
                     <button className='w-[81px] h-[29px] rounded-2xl bg-[#946FB7] hover:w-[90px] hover:h-[35px] hover:text-lg duration-200' >Next</button>

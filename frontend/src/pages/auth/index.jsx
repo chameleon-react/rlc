@@ -1,36 +1,39 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
-import { setUsername,setPassword } from '../../redux/slice/userSlice'
+import { setUsername,setPassword,setEmail } from '../../redux/slice/userSlice'
 import backendIP from '../../backendIP'
 import axios from 'axios'
 import { setIsLogin as adminLogin } from '../../redux/slice/adminSlice'
 import { setIsLogin as userLogin } from '../../redux/slice/userSlice'
 function Auth() {
   const dispatch = useDispatch()
-  const {username,password} = useSelector(state=>state.user)
+  const {email,password} = useSelector(state=>state.user)
   const navigate = useNavigate()
 
   const login = ()=>{
 
-      if (username) {
+      if (email) {
           if (password) {
-              axios.post(`${backendIP}user/login`,{username,password}).then(res=>{
+              axios.post(`${backendIP}user/login`,{email,password}).then(res=>{
                   if(res.data){
                       if(res.data.statusCode === 1){
                           dispatch(userLogin(true))
+                          dispatch(setUsername(res.data.username))
                           navigate('/dashboard')
                       }else if(res.data.statusCode === 2){
                           dispatch(adminLogin(true))
+                          dispatch(setUsername(res.data.username))
                           navigate('/dashboard')
                       }else if(res.data.statusCode === 3){
                         dispatch(userLogin(true))
+                        dispatch(setUsername(res.data.username))
                         window.history.back()
                       }
-                  }else window.alert("Please Check your Username and Password")
+                  }else window.alert("Please Check your email and Password")
               })
           } else window.alert('Please Provide a Valid Password')
-      } else window.alert('Please Provide a Valid Username')
+      } else window.alert('Please Provide a Valid Email')
   }
 
   useEffect(() => {
@@ -53,8 +56,8 @@ function Auth() {
             <h1 className='text-2xl mt-10'>Sign In</h1>
 
             <div className="username mt-5">
-              <label htmlFor="username">Username</label>
-              <input value={username} onChange={e=>{dispatch(setUsername(e.target.value))}} id='username' type="text" className='h-12 w-[75vw] lg:w-full rounded-lg pl-5 text-black outline-none' />
+              <label htmlFor="username">Email Address</label>
+              <input value={email} onChange={e=>{dispatch(setEmail(e.target.value))}} id='username' type={'email'} className='h-12 w-[75vw] lg:w-full rounded-lg pl-5 text-black outline-none' />
             </div>
 
             <div className="Password mt-5">

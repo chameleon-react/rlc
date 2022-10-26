@@ -16,38 +16,52 @@ function MobileScreen1() {
                     <img alt='' src="/image/home/inner.png" className='inner inset-0  absolute  m-auto  z-30 w-96 h-96' />
 
 
-                    <div style={{animationDuration:'2s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden top-60 -left-72 h-10 w-10" >
-                        <img alt='' className='' src="/image/home/flag/Japan.png" />
+                    <div style={{ animationDuration: '2s' }} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden top-60 -left-72 h-10 w-10" >
+                        <Link to={'/filter'}>
+                            <img alt='' className='' src="/image/home/flag/Japan.png" />
+                        </Link>
                     </div>
 
 
-                    <div style={{animationDuration:'2.5s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden top-32 left-[-22rem] h-10 w-10" >
-                        <img alt='' className='' src="/image/home/flag/spain.png" />
+                    <div style={{ animationDuration: '2.5s' }} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden top-32 left-[-22rem] h-10 w-10" >
+                        <Link to={'/filter'}>
+                            <img alt='' className='' src="/image/home/flag/spain.png" />
+                        </Link>
                     </div>
 
 
-                    <div style={{animationDuration:'3s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-32 left-[-22rem] h-10 w-10" >
-                        <img alt='' className='' src="/image/home/flag/srilanka.png" />
+                    <div style={{ animationDuration: '3s' }} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-32 left-[-22rem] h-10 w-10" >
+                        <Link to={'/filter'}>
+                            <img alt='' className='' src="/image/home/flag/srilanka.png" />
+                        </Link>
                     </div>
 
 
-                    <div style={{animationDuration:'3.5s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-60 -left-72 h-10 w-10" >
-                        <img alt='' className='' src="/image/home/flag/UAE.png" />
+                    <div style={{ animationDuration: '3.5s' }} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-60 -left-72 h-10 w-10" >
+                        <Link to={'/filter'}>
+                            <img alt='' className='' src="/image/home/flag/UAE.png" />
+                        </Link>
                     </div>
 
 
-                    <div style={{animationDuration:'4s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-60 left-72 h-10 w-10" >
-                        <img alt='' className='' src="/image/home/flag/malaysia.png" />
+                    <div style={{ animationDuration: '4s' }} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-60 left-72 h-10 w-10" >
+                        <Link to={'/filter'}>
+                            <img alt='' className='' src="/image/home/flag/malaysia.png" />
+                        </Link>
                     </div>
 
 
-                    <div style={{animationDuration:'4.5s'}} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-32 left-[22rem] h-10 w-10" >
-                        <img alt='' className='' src="/image/home/flag/UK.png" />
+                    <div style={{ animationDuration: '4.5s' }} className="mobileflag rounded-full  absolute m-auto inset-0 z-50 overflow-hidden -top-32 left-[22rem] h-10 w-10" >
+                        <Link to={'/filter'}>
+                            <img alt='' className='' src="/image/home/flag/UK.png" />
+                        </Link>
                     </div>
 
-                    
-                   <div style={{animationDuration:'5s'}} className='mobileflag rounded-full  absolute m-auto inset-0 z-50 top-32 left-[22rem] h-10 w-10' >
-                        <img alt='' className='' src="/image/home/flag/bahrain.png" />
+
+                    <div style={{ animationDuration: '5s' }} className='mobileflag rounded-full  absolute m-auto inset-0 z-50 top-32 left-[22rem] h-10 w-10' >
+                        <Link to={'/filter'}>
+                            <img alt='' className='' src="/image/home/flag/bahrain.png" />
+                        </Link>
                     </div>
 
                 </div>

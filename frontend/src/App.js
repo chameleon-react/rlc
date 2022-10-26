@@ -16,6 +16,8 @@ import Filter from "./pages/filter";
 import { BsWhatsapp } from 'react-icons/bs'
 import NotFound from "./pages/404";
 
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function App() {
   const userLogin = useSelector(state => state.user.isLogin)
@@ -23,6 +25,7 @@ function App() {
   return (
     <div className="App  font-roboto">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+        <ScrollToTop/>
       <Routes >
         {/* homepage */}
         <Route path="/" element={<Home />} />
@@ -73,3 +76,17 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}

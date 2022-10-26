@@ -8,7 +8,7 @@ exports.create = async (req, res) => {
     const { username, password, email,statusCode } = req.body
     if (username && password) {
         try {
-            const found = await userModel.findOne({ where: { username } })
+            const found = await userModel.findOne({ where: { username,email } })
             if (!found) {
                 bcrypt.hash(password, saltRounds, async function (err, hash) {
                     await userModel.create({ username, password: hash, email,statusCode })
@@ -23,19 +23,19 @@ exports.create = async (req, res) => {
 }
 
 exports.login = async (req, res) => {
-    const { username, password } = req.body
-    if (username && password) {
+    const { username, password,email } = req.body
+    if (email && password) {
         try {
             const found = await userModel.findOne({
                 where: {
-                    username
+                    email
                 },
                 raw: true
             })
             bcrypt.compare(password, found.password, function (err, result) {
                 if(result){
                     res.cookie('secure', true, { expires: new Date(Date.now() + 1000 * 60 * 60) }) 
-                    res.send({statusCode:found.statusCode})
+                    res.send({statusCode:found.statusCode,username:found.username})
                 }else res.send(false)
                  
                 
@@ -69,4 +69,21 @@ exports.isVerify = async(req,res)=>{
     } catch (error) {
         console.log(error.message)
     }
+}
+
+
+exports.edit = async(req,res)=>{
+    const {password,email,username} = req.body
+
+    if(username){
+            if(email){
+                userModel.update({email},{where:{username}})
+            }
+            if(password !== ''){
+                bcrypt.hash(password, saltRounds, async function (err, hash) {
+                    await userModel.update({  password: hash },{where:{username}})
+                });
+            }
+            res.send(true)
+    }else res.send(false)
 }

@@ -56,9 +56,9 @@ function Q5() {
             <div className="Measurments flex flex-col ">
                 <label htmlFor="Measurments">Measurments</label>
                 <div className="flex gap-12">
-                    <input type="number" min={40} max={99} onChange={e=>{if(e.target.value > 99) { window.alert('measurement upto 99');e.target.value = 99 } }} className='h-10 w-10 bg-transparent border-b outline-none text-center' />
-                    <input type="number" min={40} max={99} onChange={e=>{if(e.target.value > 99) { window.alert('measurement upto 99');e.target.value = 99 } }} className='h-10 w-10 bg-transparent border-b outline-none text-center' />
-                    <input type="number" min={40} max={99} onChange={e=>{if(e.target.value > 99) { window.alert('measurement upto 99');e.target.value = 99 } }} className='h-10 w-10 bg-transparent border-b outline-none text-center' />
+                    <input type="number" min={40} max={99} onChange={e=>{if(e.target.value > 99) { window.alert('measurement upto 99');e.target.value = Number(e.target.value.toString().substring(0, 2)) } }} className='h-10 w-10 bg-transparent border-b outline-none text-center' />
+                    <input type="number" min={40} max={99} onChange={e=>{if(e.target.value > 99) { window.alert('measurement upto 99');e.target.value = Number(e.target.value.toString().substring(0, 2)) } }} className='h-10 w-10 bg-transparent border-b outline-none text-center' />
+                    <input type="number" min={40} max={99} onChange={e=>{if(e.target.value > 99) { window.alert('measurement upto 99');e.target.value = Number(e.target.value.toString().substring(0, 2)) } }} className='h-10 w-10 bg-transparent border-b outline-none text-center' />
                 </div>
                 {/* <input onChange={e => dispatch(setMeasurement(e.target.value))} value={measurement} id='Measurments' className='h-10 w-80 md:w-64 bg-transparent border-b outline-none' type="text" /> */}
             </div>

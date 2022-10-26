@@ -24,28 +24,6 @@ function FAQ() {
                 question={'What browsers does our site support?'}
                 answer={'We actively support the latest stable version of Chrome, Firefox, Safari and Edge. We also actively make sure that our site works well in iOS and Android.'}
             />
-            <Question
-                question={'How Does Red Light Club Work?'}
-                answer={'Red Light Club is a website to book escorts online. You can access the list of escorts available for free, browse through the different profiles, and book a date in minutes on the app.'}
-            />
-            <Question
-                question={'How Many Escorts Are Registered On Red Light Club?'}
-                answer={'As of 2022, over 30,000 escorts are registered on Red Light Club in over 30 cities across Asia, Europe, and Oceania.'}
-            />
-            <Question
-                question={'How can I join?'}
-                answer={'Joining  Red Light Club is easy. Complete the sign up form,And Then Create a Ads'}
-            />
-            <Question
-                question={'How do I change my password?'}
-                answer={'To change your password, go to Account settings, then click on Change password.'}
-            />
-            <Question
-                question={'What browsers does our site support?'}
-                answer={'We actively support the latest stable version of Chrome, Firefox, Safari and Edge. We also actively make sure that our site works well in iOS and Android.'}
-            />
-
-
         </div>
     )
 }

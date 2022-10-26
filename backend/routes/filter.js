@@ -9,10 +9,8 @@ var silverModel = require('../model/silverModal');
 
 
 router.post('/', async (req, res) => { 
-    console.log(req.body)
-    var found = await adsModel.findAll({ raw: true,where:{...req.body} })
+    var found = await adsModel.findAll({ raw: true,where:{...req.body,visibility:true} })
         res.send(found)
-    
 })
 
 router.get('/none', async (req, res) => {

@@ -4,6 +4,7 @@ import { setLocation, setNationality, setLanguage } from '../../../../redux/slic
 import { setError, setDisable, setAllow } from '../../../../redux/slice/utilSlice'
 import Nationality from './Nationality'
 import Select from 'react-select'
+import { LocationSearchInput } from './LocationSearchInput'
 function Q3() {
     const dispatch = useDispatch()
     const { location, nationality, language } = useSelector(state => state.ads)
@@ -86,12 +87,17 @@ function Q3() {
         // eslint-disable-next-line
     }, [location, nationality, language])
 
+    const getLocation = location =>{
+        dispatch(setLocation(location))
+        console.log(location)
+    }
 
     return (
         <>
             <div className="Location flex flex-col">
                 <label htmlFor="Location">Location</label>
-                <input placeholder='Downtown' onChange={e => dispatch(setLocation(e.target.value))} value={location} id='Location' className='h-10 w-80 md:w-64 bg-transparent border-b outline-none' type="text" />
+                <LocationSearchInput getLocation={getLocation}/>
+                {/* <input placeholder='Downtown' onChange={e => dispatch(setLocation(e.target.value))} value={location} id='Location' className='h-10 w-80 md:w-64 bg-transparent border-b outline-none' type="text" /> */}
             </div>
             <div className="Nationality flex flex-col">
                 <label htmlFor="Nationality">Nationality</label>

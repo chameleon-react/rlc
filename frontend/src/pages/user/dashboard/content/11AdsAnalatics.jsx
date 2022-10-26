@@ -16,6 +16,7 @@ function AdsAnalatics() {
         username
       }}).then(res=>{
         setData(res.data)
+        setId(res.data[0].id)
       })
       // eslint-disable-next-line
     }, [])
@@ -48,7 +49,6 @@ function AdsAnalatics() {
             <GroupButton />
             <div className="w-[800px] flex justify-end">
                     <select className='h-12 px-3 outline-none rounded-lg' onChange={e=>{setId(e.target.value)}}>
-                        <option value={''}>Select Your Ads</option>
                         {
                             data.map(e=><option value={e.id}>{e.adsTitle}</option>)
                         }

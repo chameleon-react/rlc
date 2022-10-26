@@ -37,21 +37,28 @@ const Screen3 = () => {
                             <div className="h-1/2 w-full flex justify-center items-center">
                                 <div className="w-[409px] h-[409px] relative flex justify-center items-center">
                                     <div className="platinum absolute top-0 right-0 z-50 w-[105px] h-[105px] flex justify-center items-center">
-                                        <div className={`duration-200 ${percentage < 69 ? "w-[105px] h-[105px] rounded-full bg-blue-800" : 'w-[50px] h-[50px] rounded-full bg-blue-800'}  flex justify-center items-center`}>
-                                            <h2 className="text-white">Platinum</h2>
-                                        </div>
+                                        <Link to={'/filter'}>
+                                            <div className={`duration-200 ${percentage < 69 ? "w-[105px] h-[105px] rounded-full bg-blue-800" : 'w-[50px] h-[50px] rounded-full bg-blue-800'}  flex justify-center items-center`}>
+                                                <h2 className="text-white">Platinum</h2>
+                                            </div>
+                                        </Link>
                                     </div>
 
                                     <div className="gold absolute bottom-0 right-0 z-50 w-[105px] h-[105px] flex justify-center items-center">
-                                        <div className={`duration-200 ${percentage >= 69 && percentage <= 84 ? "w-[105px] h-[105px] rounded-full bg-[#E5AF2D]" : 'w-[50px] h-[50px] rounded-full bg-[#E5AF2D]'} flex justify-center items-center`}>
-                                            <h2 className="text-white">Gold</h2>
-                                        </div>
+                                        <Link to={'/filter'}>
+
+                                            <div className={`duration-200 ${percentage >= 69 && percentage <= 84 ? "w-[105px] h-[105px] rounded-full bg-[#E5AF2D]" : 'w-[50px] h-[50px] rounded-full bg-[#E5AF2D]'} flex justify-center items-center`}>
+                                                <h2 className="text-white">Gold</h2>
+                                            </div>
+                                        </Link>
                                     </div>
 
                                     <div className="silver absolute top-0 left-0 z-50 w-[105px] h-[105px] flex justify-center items-center">
-                                        <div className={`duration-200 ${percentage > 84 ? "w-[105px] h-[105px] rounded-full bg-white" : 'w-[50px] h-[50px] rounded-full bg-white'} flex justify-center items-center`}>
-                                            <h2 className="">Silver</h2>
-                                        </div>
+                                        <Link to={'/filter'}>
+                                            <div className={`duration-200 ${percentage > 84 ? "w-[105px] h-[105px] rounded-full bg-white" : 'w-[50px] h-[50px] rounded-full bg-white'} flex justify-center items-center`}>
+                                                <h2 className="">Silver</h2>
+                                            </div>
+                                        </Link>
                                     </div>
 
                                     <img src="/image/home/rounds.png" className="w-full h-full absolute" alt="" />
@@ -102,21 +109,27 @@ const Plans = ({ percentage }) => {
         <div className="h-1/2 w-full flex justify-center items-center">
             <div className="w-[409px] h-[409px] relative flex justify-center items-center">
                 <div className="platinum absolute top-0 right-0 z-50 w-[105px] h-[105px] flex justify-center items-center">
-                    <div className={`duration-200 ${percentage < 69 ? "w-[105px] h-[105px] rounded-full bg-blue-800" : 'w-[50px] h-[50px] rounded-full bg-blue-800'}  flex justify-center items-center`}>
-                        <h2 className="text-white">Platinum</h2>
-                    </div>
+                    <Link to={'/filter'}>
+                        <div className={`duration-200 ${percentage < 69 ? "w-[105px] h-[105px] rounded-full bg-blue-800" : 'w-[50px] h-[50px] rounded-full bg-blue-800'}  flex justify-center items-center`}>
+                            <h2 className="text-white">Platinum</h2>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="gold absolute bottom-0 right-0 z-50 w-[105px] h-[105px] flex justify-center items-center">
-                    <div className={`duration-200 ${percentage >= 69 && percentage <= 84 ? "w-[105px] h-[105px] rounded-full bg-[#E5AF2D]" : 'w-[50px] h-[50px] rounded-full bg-[#E5AF2D]'} flex justify-center items-center`}>
-                        <h2 className="text-white">Gold</h2>
-                    </div>
+                    <Link to={'/filter'}>
+                        <div className={`duration-200 ${percentage >= 69 && percentage <= 84 ? "w-[105px] h-[105px] rounded-full bg-[#E5AF2D]" : 'w-[50px] h-[50px] rounded-full bg-[#E5AF2D]'} flex justify-center items-center`}>
+                            <h2 className="text-white">Gold</h2>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="silver absolute top-0 left-0 z-50 w-[105px] h-[105px] flex justify-center items-center">
-                    <div className={`duration-200 ${percentage > 84 ? "w-[105px] h-[105px] rounded-full bg-white" : 'w-[50px] h-[50px] rounded-full bg-white'} flex justify-center items-center`}>
-                        <h2 className="">Silver</h2>
-                    </div>
+                    <Link to={'/filter'}>
+                        <div className={`duration-200 ${percentage > 84 ? "w-[105px] h-[105px] rounded-full bg-white" : 'w-[50px] h-[50px] rounded-full bg-white'} flex justify-center items-center`}>
+                            <h2 className="">Silver</h2>
+                        </div>
+                    </Link>
                 </div>
 
                 <img src="/image/home/rounds.png" className="w-full h-full absolute" alt="" />

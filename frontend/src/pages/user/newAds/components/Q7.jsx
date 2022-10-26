@@ -33,7 +33,7 @@ function Q7() {
                 </div>
                 <div className=" flex flex-col">
                     <select onChange={e => dispatch(setIncallCurrencyType(e.target.value))} value={inCall} id='' className='h-10 w-80 md:w-64 bg-transparent border-b outline-none' placeholder='InCall Currency' type="text" >
-                        <option className='text-black' value="">OutCall Currency</option>
+                        <option className='text-black' value="">InCall Currency</option>
                         <option className='text-black' value="AED">UAE Dirham (AED)</option>
                         <option className='text-black' value="USD"> United States Dollar (USD)</option>
                         <option className='text-black' value="BHD">Bahraini Dinar (BHD)</option>

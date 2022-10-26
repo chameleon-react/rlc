@@ -75,9 +75,9 @@ const Card = ({ id, profilePhoto, adsTitle, view, region, fetchData, verified })
     
     const [enabled, setEnabled] = useState(true)
     return (
-        <div className="card h-96 w-64 flex flex-col  border items-center justify-center  relative">
+        <div className={` card h-96 w-64 flex flex-col  border items-center justify-center  relative z-40`}>
 
-            <div className="absolute right-0 top-2  flex justify-center items-center gap-1">
+            <div className="absolute right-0 top-2  flex justify-center items-center gap-1 blur-none z-50">
                 <div className="flex">
                     <label class="inline-flex relative items-center  cursor-pointer">
                         <input
@@ -87,7 +87,9 @@ const Card = ({ id, profilePhoto, adsTitle, view, region, fetchData, verified })
                             readOnly
                             onChange={()=>{
                                 axios.post(`${backendIP}ads/edit`,{editing:{visibility:enabled},id})
-                                window.alert('Updated')
+                                if(!enabled){
+                                    window.alert('Your Profile will not show until vacation mode is off')
+                                }
                             }}
                         />
                         <div
@@ -108,14 +110,14 @@ const Card = ({ id, profilePhoto, adsTitle, view, region, fetchData, verified })
                 </div>
             </div>
 
-            <div className="h-[40%] w-[60%] rounded-full border absolute top-2">
+            <div className={`h-[40%] w-[60%] rounded-full border absolute top-2 ${!enabled && 'blur-sm'}`}>
                 <img src={profilePhoto} alt="" className='h-full w-full rounded-full object-cover' />
             </div>
-            <div className="h-[15%] w-full text-center top-48 absolute flex flex-col ">
+            <div className={`h-[15%] w-full text-center top-48 absolute flex flex-col ${!enabled && 'blur-sm'}`}>
                 <span className='text-lg font-medium '>{adsTitle}</span>
                 <span className='text-sm'>{region}</span>
             </div>
-            <div className="h-[15%] w-full text-center top-64 absolute">
+            <div className={`h-[15%] w-full text-center top-64 absolute ${!enabled && 'blur-sm'}`}>
                 <span className='text-lg font-medium flex justify-center items-center gap-2 text-[#75848d]'>
                     <span className="material-symbols-outlined">
                         visibility
@@ -123,7 +125,7 @@ const Card = ({ id, profilePhoto, adsTitle, view, region, fetchData, verified })
                     {view}
                 </span>
             </div>
-            <div className="h-[15%] w-full absolute bottom-5 flex justify-around items-center ">
+            <div className={`h-[15%] w-full absolute bottom-5 flex justify-around items-center ${!enabled && 'blur-sm'}`}>
                 <button className='border-2 border-[#6426c3] rounded-2xl h-10 w-16 justify-center items-center flex'
                     onClick={() => {
                         if (!verified) {

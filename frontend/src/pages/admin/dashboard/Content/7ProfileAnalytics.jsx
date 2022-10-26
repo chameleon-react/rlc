@@ -7,19 +7,20 @@ import GroupButton from './components/GroupButton'
 
 function ProfileAnalytics() {
     const [data, setData] = useState([])
+    const [id, setId] = useState('')
     useEffect(() => {
         axios.get(`${backendIP}ads/viewall`).then(res => {
             setData(res.data)
+            setId(res.data[0].id)
         })
     }, [])
-    const [id, setId] = useState('')
+    
     const [date, setDate] = useState([])
     const [view, setView] = useState([])
     useEffect(() => {
         axios.get(`${backendIP}ads/analytics`, { params: { id } }).then(res => {
             setDate(Object.keys(res.data).reverse())
             setView(Object.values(res.data).reverse())
-
         })
     }, [id])
 
@@ -41,7 +42,6 @@ function ProfileAnalytics() {
             <GroupButton />
             <div className="w-[800px] flex justify-end">
                 <select className='h-12 px-3 outline-none rounded-lg capitalize' onChange={e => { setId(e.target.value) }}>
-                    <option value={''}>Select Your Ads</option>
                     {
                         data.map(e => <option value={e.id}>{e.adsTitle}</option>)
                     }

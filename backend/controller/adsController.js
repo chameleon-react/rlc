@@ -51,7 +51,6 @@ exports.view = async (req, res) => {
 
 exports.edit = async (req, res) => {
     const { editing, id } = req.body
-    console.log(editing)
     if (id, editing) {
         try {
             await adsModel.update({ ...editing }, { where: { id } })
@@ -62,7 +61,6 @@ exports.edit = async (req, res) => {
         }
     } else res.send(false)
 }
-
 
 
 exports.delete = async (req, res) => {

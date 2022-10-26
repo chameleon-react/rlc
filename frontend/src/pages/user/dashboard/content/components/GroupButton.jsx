@@ -11,9 +11,11 @@ function GroupButton() {
             <div onClick={() => navigate('/static/faq')}>
                 <BigButton title={'FAQ'} color='5ECFFF' />
             </div>
-            <div onClick={() => { }}>
-                <BigButton title={'Help'} color='E328AF' />
-            </div>
+            <a href="mailto:info@redlightclub.net" target={'_blank'}>
+                <div onClick={() => { }}>
+                    <BigButton title={'Help'} color='E328AF' />
+                </div>
+            </a>
         </div>
     )
 }

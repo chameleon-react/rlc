@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { useSelector, useDispatch } from 'react-redux'
 import backendIP from '../../../../backendIP'
-import { setProfilePhoto,setGallery } from '../../../../redux/slice/adsSlice'
+import { setProfilePhoto, setGallery } from '../../../../redux/slice/adsSlice'
 import { setAllow, setError } from '../../../../redux/slice/utilSlice'
 
 function Q8() {
@@ -13,14 +13,15 @@ function Q8() {
     // eslint-disable-next-line
     const { profilePhoto, gallery } = useSelector(state => state.ads)
     useEffect(() => {
-        if(profilePhoto && gallery?.length !==0 ){
-            dispatch(setAllow())
-            
-        }else {
+        if (profilePhoto) {
+            if (gallery?.length !== 0) {
+                dispatch(setAllow())
+            }else dispatch(setError('Please Upload Gallery Photo'))
+        } else {
             dispatch(setError('Please Upload Profile Photo'))
         }
         // eslint-disable-next-line
-    }, [profilePhoto,gallery])
+    }, [profilePhoto, gallery])
     return (
         <div className="h-full w-full flex flex-col justify-center items-center gap-10">
             <ProfilePhoto />
@@ -34,7 +35,7 @@ export default Q8
 
 const ProfilePhoto = () => {
     const dispatch = useDispatch()
-    const {username} =useSelector(state=>state.user)
+    const { username } = useSelector(state => state.user)
     const [preview, setPreview] = useState('')
     const { getRootProps, getInputProps } = useDropzone({
         accept: {
@@ -46,9 +47,9 @@ const ProfilePhoto = () => {
             setPreview(URL.createObjectURL(acceptedFiles[0]))
             const data = new FormData()
             const name = `${username}${new Date().toISOString()}`
-            data.append('name',name)
-            data.append('profile',acceptedFiles[0])
-            axios.post(`${backendIP}file/profile`,data).then(res=>{window.alert('Profile is Uploaded')}).then(res=>{
+            data.append('name', name)
+            data.append('profile', acceptedFiles[0])
+            axios.post(`${backendIP}file/profile`, data).then(res => { window.alert('Profile is Uploaded') }).then(res => {
                 dispatch(setProfilePhoto(`${backendIP}image/${name}.png`))
             })
         }
@@ -74,7 +75,7 @@ const ProfilePhoto = () => {
 
 const Gallery = () => {
     const dispatch = useDispatch()
-    const {username} = useSelector(state=>state.user)
+    const { username } = useSelector(state => state.user)
     const [preview, setPreview] = useState([])
 
 
@@ -87,14 +88,14 @@ const Gallery = () => {
             setPreview([])
             const data = new FormData()
             const name = `${username}${new Date().toISOString()}`
-            data.append('name',name)
-            acceptedFiles.map(e=>data.append('photos',e))
+            data.append('name', name)
+            acceptedFiles.map(e => data.append('photos', e))
 
-            axios.post(`${backendIP}file/gallery`,data).then(res=>{window.alert('Profile is Uploaded')}).then(res=>{
-                
+            axios.post(`${backendIP}file/gallery`, data).then(res => { window.alert('Gallery images is Uploaded') }).then(res => {
+
             })
-            acceptedFiles.map(e=>dispatch(setGallery(`${backendIP}gallery/${name}${e.name.split('.')[0]}.png`)))
-            
+            acceptedFiles.map(e => dispatch(setGallery(`${backendIP}gallery/${name}${e.name.split('.')[0]}.png`)))
+
         }
     });
 
@@ -103,7 +104,7 @@ const Gallery = () => {
         acceptedFiles.map(file => {
             setPreview(prev => [...prev, URL.createObjectURL(file)])
         })
-        
+
 
     }, [acceptedFiles])
 
@@ -117,7 +118,7 @@ const Gallery = () => {
             </div>
             <div className="gallery flex gap-10 justify-center items-center">
                 {
-                    preview.map((file,index) => <img key={index} src={file} className='w-36 h-36' alt="" />)
+                    preview.map((file, index) => <img key={index} src={file} className='w-36 h-36' alt="" />)
                 }
             </div>
         </div>
