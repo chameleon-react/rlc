@@ -12,5 +12,6 @@ router.get('/isVerify',userController.isVerify)
 router.get('/',userController.getAll)
 
 router.post('/edit',userController.edit)
+router.post('/delete',userController.delete)
 
 module.exports = router;

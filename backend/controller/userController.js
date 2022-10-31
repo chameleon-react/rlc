@@ -1,4 +1,5 @@
 const userModel = require('../model/userModel')
+const adsModal = require('../model/adsModel')
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -86,4 +87,16 @@ exports.edit = async(req,res)=>{
             }
             res.send(true)
     }else res.send(false)
+}
+
+exports.delete = async(req,res)=>{
+    const {username} = req.body
+    if(username){
+        adsModal.destroy({where:{username}})
+        userModel.destroy({where:{username}})
+        res.send(true)
+    }
+    else{
+        res.send(false)
+    }
 }

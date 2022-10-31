@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import backendIP from '../../../../backendIP'
 import { setMenuSelector } from '../../../../redux/slice/utilSlice'
 import Title from '../components/Title'
@@ -8,8 +9,9 @@ import GroupButton from './components/GroupButton'
 
 
 function Settings() {
-
+    const { username } = useSelector(state => state.user)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     return (
         <div>
             <Title title={'Settings'} />
@@ -46,7 +48,16 @@ function Settings() {
                             <option value="">4</option>
                         </select>
                     </div>
-                    <button className='bg-[#ddd] rounded self-end mt-5 text-[#999] w-32 h-8'>Save Changes</button>
+                    <button className='bg-[#ddd] rounded self-end mt-5 text-[#999] w-48 h-8' onClick={()=>{
+                        const confirm = window.confirm('Are you sure you want to deactivate ?');
+                        if(confirm){
+                            axios.post(`${backendIP}user/delete`,{username}).then(()=>{
+                                window.alert('Deleted')
+                                navigate('/')
+                            }
+                            )
+                        }
+                    }}>DEACTIVATE ACCOUNT</button>
                 </div>
             </div>
 
