@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { setIsLogin } from '../../../../redux/slice/adminSlice'
 import { SetLanguage, setMenuSelector, showSidebar as show } from '../../../../redux/slice/utilSlice'
-
 function Navbar() {
     const { showSidebar, language } = useSelector(state => state.util)
     const { username } = useSelector(state => state.user)
@@ -28,6 +28,11 @@ function Navbar() {
                 <img src="/image/common/flag/arabic.png" className={`${language !== 'Arabic' && 'hidden'} h-10 w-10 top-[.8rem] left-3 absolute rounded-full`} alt="" />
                 <img src="/image/common/flag/spanish.png" className={`${language !== 'Spanish' && 'hidden'} h-10 w-10 top-[.8rem] left-3 absolute rounded-full`} alt="" />
                 <img src="/image/common/flag/french.png" className={`${language !== 'Franch' && 'hidden'} h-10 w-10 top-[.8rem] left-3 absolute rounded-full`} alt="" />
+            </div>
+            <div className="logout rounded-full border h-12 w-12 flex justify-center items-center" onClick={()=>dispatch(setIsLogin(false))}>
+                <span className="material-symbols-outlined text-lg font-semibold">
+                    logout
+                </span>
             </div>
             <div className="profile h-16 w-52 mr-5 rounded-2xl flex">
                 <div className="photo w-16 h-full ">

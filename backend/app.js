@@ -26,7 +26,8 @@ const qna = require('./routes/qna')
 
 var app = express();
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname, 'public')))
+
+
 app.use('/image',express.static(path.join(__dirname,'image')))
 app.use('/gallery',express.static(path.join(__dirname,'gallery')))
 
@@ -46,6 +47,12 @@ app.use('/tier',tier)
 app.use('/review',review)
 app.use('/report',report)
 app.use('/qna',qna)
+
+app.use(express.static(path.join(__dirname, 'build')))
+
+app.use('*',(req,res)=>{
+    res.sendFile(__dirname,'build')
+})
 
 
 module.exports = app;
